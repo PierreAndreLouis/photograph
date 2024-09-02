@@ -9,7 +9,16 @@ export default {
     flowbite.content(),
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'xs': '480px',
+      },
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+        cursive: ["Pacifico", "Sriracha", "cursive"],
+        cursive2: ["Sriracha", "cursive"],
+      }
+    },
   },
   plugins: [
     flowbite.plugin(),

@@ -49,6 +49,23 @@ export default function BlogSeo() {
             }
           `}
                 </script>
+
+
+
+
+
+
+                {/* <!-- Google tag (gtag.js) --> */}
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFV9GQVC5K"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments)}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-GFV9GQVC5K');
+                </script>
+
+                
             </Helmet>
         </div>
     )

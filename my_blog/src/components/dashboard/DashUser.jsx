@@ -123,7 +123,7 @@ export default function DashUser() {
           )}
         </>
       ) : (
-        <p>You have no users yet!</p>
+        <p>Loading...</p>
       )}
       <Modal
         show={showModal}
