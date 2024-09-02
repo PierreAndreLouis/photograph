@@ -1,0 +1,141 @@
+import { Avatar, Button, Dropdown, Navbar, TextInput } from 'flowbite-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleTheme } from '../../../redux/theme/themeSlice';
+import { signoutSuccess } from '../../../redux/user/userSlice';
+import { useEffect, useState } from 'react';
+
+export default function Header() {
+  const path = useLocation().pathname;
+  const location = useLocation();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector((state) => state.user);
+  const { theme } = useSelector((state) => state.theme);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    // Récupère le terme de recherche depuis l'URL
+    const urlParams = new URLSearchParams(location.search);
+    const searchTermFromUrl = urlParams.get('searchTerm');
+    if (searchTermFromUrl) {
+      setSearchTerm(searchTermFromUrl);
+    }
+  }, [location.search]);
+
+  const handleSignout = async () => {
+    try {
+      // Envoie une requête pour déconnecter l'utilisateur
+      const res = await fetch('/api/user/signout', {
+        method: 'POST',
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        console.log(data.message);
+      } else {
+        dispatch(signoutSuccess()); // Met à jour l'état de connexion dans Redux
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Crée la chaîne de requête avec le terme de recherche
+    const urlParams = new URLSearchParams(location.search);
+    urlParams.set('searchTerm', searchTerm);
+    const searchQuery = urlParams.toString();
+    navigate(`/search?${searchQuery}`); // Navigue vers la page de recherche
+  };
+
+  return (
+    <Navbar className='border-b-2 fixed z-50 left-0 right-0 top-0'>
+      {/* Logo et lien vers la page d'accueil */}
+      <Link
+        to='/'
+        className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'
+      >
+        <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
+          Pedro's
+        </span>
+        Blog
+      </Link>
+
+      {/* Zone de recherche et boutons */}
+      <div className='flex gap-2 md:order-2'>
+        <Button
+          className='w-10 h-10'
+          color='gray'
+          pill
+          onClick={() => dispatch(toggleTheme())} // Change le thème
+        >
+          {theme === 'light' ? <FaSun /> : <FaMoon />}
+        </Button>
+
+        {currentUser ? (
+          <Dropdown
+            arrowIcon={false}
+            inline
+            label={
+              <Avatar alt='user' img={currentUser.profilePicture} rounded className='w-10 h-10' />
+            }
+          >
+            <Dropdown.Header>
+              <span className='block text-sm'>@{currentUser.username}</span>
+              <span className='block text-sm font-medium truncate'>{currentUser.email}</span>
+            </Dropdown.Header>
+
+            <Link to='/dashboard?tab=profile'>
+              <Dropdown.Item>Profile</Dropdown.Item>
+            </Link>
+
+            <Dropdown.Divider />
+
+            {currentUser.isAdmin && (
+              <Link to='/dashboard?tab=dash'>
+                <Dropdown.Item labelColor='dark' as='div'>
+                  Dashboard
+                </Dropdown.Item>
+              </Link>
+            )}
+
+            <Dropdown.Divider />
+
+            <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
+          </Dropdown>
+        ) : (
+          <Link to='/sign-in'>
+            <Button gradientDuoTone='purpleToBlue' outline>
+              Sign In
+            </Button>
+          </Link>
+        )}
+
+        <Navbar.Toggle />
+      </div>
+
+      {/* Menu de navigation */}
+      <Navbar.Collapse>
+        <Navbar.Link active={path === '/'} as={'div'}>
+          <Link to='/'>Home</Link>
+        </Navbar.Link>
+        <Navbar.Link active={path === '/about'} as={'div'}>
+          <Link to='/about'>About</Link>
+        </Navbar.Link>
+        <Navbar.Link active={path === '/blogs'} as={'div'}>
+          <Link to='/blogs'>Blogs</Link>
+        </Navbar.Link>
+        <Navbar.Link active={path === '/contact'} as={'div'}>
+          <Link to='/contact'>Contact</Link>
+        </Navbar.Link>
+        <Navbar.Link active={path === '/reservation'} as={'div'}>
+          <Link className='border bg-sky-200 px-4 py-1 rounded-xl text-gray-700 font-bold' to='/reservation'>
+            Rendez-vous
+          </Link>
+        </Navbar.Link>
+      </Navbar.Collapse>
+    </Navbar>
+  );
+}

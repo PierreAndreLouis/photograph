@@ -8,6 +8,18 @@ cd my-project
 npm install
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* <!-- Install tailwind css with vite --> */
 cd my_blog
 npm install -D tailwindcss postcss autoprefixer
@@ -17,12 +29,161 @@ npm run dev
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- initialise a github repository in the root folder -->
-<!-- ================================================= -->
 cd ..
 
 git init
 git add .
 git commit -m "install React app and tailwind css"
-git remote add origin https://github.com/LouisPierre-Andre/full_blog_website_2.gitgit branch -M main
+git remote add origin https://github.com/LouisPierre-Andre/full_blog_website_2.git
+git branch -M main
 git push -u origin main
+
+
+git add .
+git commit -m "install React app and tailwind css"
+git push -u origin main
+
+
+
+
+
+
+
+
+
+<!-- Create pages and routes -->
+
+cd my_blog
+npm install react-router-dom
+
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+
+<BrowserRouter>
+    <Routes>
+        <Route path="/" element={<Home />} />
+    </Routes>
+</BrowserRouter>
+
+
+
+
+
+
+
+
+
+
+<!-- Install Flowbite -->
+cd my_blog
+npm install flowbite-react
+npm install flowbite flowbite-react
+npm install react-icons
+
+
+@import 'flowbite/dist/flowbite.css';
+
+
+
+
+
+<!-- Create The Back-End Folder api -->
+=========================================
+
+cd ..
+npm init -y // to create a package.json file
+npm install express
+
+
+run node server
+--------------------------------
+// in the package.json file, add the propriety : 
+        "type": "module"
+node api/index.js
+
+
+npm install nodemon
+// add the script in package.json: 
+        "dev" : "nodemon api/index.js",
+        "start" : "node api/index.js"
+npm run dev
+
+N.B : move .gitingnore from project folder fot root folder
+
+
+
+
+
+
+
+<!-- Connect to mango db database -->
+=====================================
+
+cd ..
+npm install mongoose
+
+
+configuratin .env file
+-----------------------------
+npm install dotenv
+
+
+N.B: add .env to the .gitignore file 
+
+
+<!-- to encrypt password -->
+npm install bcryptjs
+
+<!-- To handle cookie in the browser -->
+npm install jsonwebtoken
+
+
+
+<!-- add redux toolkit -->
+=====================================
+cd my_blog
+npm install @reduxjs/toolkit react-redux
+
+
+
+<!-- add redux-persist -->
+=========================
+cd my_blog
+npm install redux-persist
+
+
+
+<!-- Install firebase -->
+cd my_blog
+npm install firebase
+
+
+<!-- react circular progress bar -->
+cd my_blog
+npm install --save react-circular-progressbar
+
+
+<!-- cokies -->
+cd ..
+npm install cookie-parser
+
+
+<!-- React quill to write a poste -->
+cd my_blog
+npm install react-quill --save
+
+
+<!-- tailwind-scrollbar -->
+npm install --save-dev tailwind-scrollbar
