@@ -55,17 +55,19 @@ export default function BlogSeo() {
 
 
 
-                {/* <!-- Google tag (gtag.js) --> */}
+                {/* Google tag (gtag.js) */}
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFV9GQVC5K"></script>
                 <script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments)}
-                    gtag('js', new Date());
+                    {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
 
-                    gtag('config', 'G-GFV9GQVC5K');
+                        gtag('config', 'G-GFV9GQVC5K');
+                    `}
                 </script>
 
-                
+
             </Helmet>
         </div>
     )

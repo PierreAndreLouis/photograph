@@ -1,13 +1,36 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr"> <!-- Utilise "fr" si ton site est principalement en français -->
+
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Compatibilité avec IE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="profil.png" /> <!-- Mets à jour le chemin du favicon -->
+
+    <!-- Title par défaut -->
+    <title>Pierre-André LOUIS</title>
+
+    <!-- Description par défaut (peut être ajustée avec Helmet) -->
+    <meta name="description"
+      content="Bienvenue sur le site de Pierre-André Louis, créateur de sites web professionnels." />
+
+    <!-- SEO et Balises sociales de base (remplacées dynamiquement par Helmet) -->
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pierre-André Louis - Création de Sites Web Professionnels" />
+    <meta property="og:description"
+      content="Découvrez nos services de création de sites web professionnels pour freelancers et entrepreneurs." />
+    <meta property="og:image" content="/path/to/default-image.jpg" /> <!-- Utilise une image par défaut -->
+
+    <!-- Styles CSS globaux si nécessaire -->
+    <!-- <link rel="stylesheet" href="/path/to/global-styles.css" /> -->
   </head>
+
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script> 
+    <script type="module" src="/src/main.jsx"></script>
   </body>
+
 </html>
