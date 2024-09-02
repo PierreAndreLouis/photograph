@@ -16,6 +16,8 @@ export default function AboutSeo() {
                     content="Découvrez nos services de création de sites web professionnels pour freelancers et entrepreneurs. Boostez votre présence en ligne avec un site moderne et attractif."
                 />
 
+                
+
                 {/* Mots-clés SEO */}
                 <meta name="keywords" content="création site web, web design, développement web, freelance, portfolio, site vitrine, design UX, site responsive" />
 
@@ -60,6 +62,7 @@ export default function AboutSeo() {
 
 
 
+                <meta name="google-site-verification" content="N-zeL1g6i8H01BkSrgIW_lM7MYrYGG3lVzsGMGvSq4o" />
 
 
                 {/* Google tag (gtag.js) */}

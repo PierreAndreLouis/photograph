@@ -51,6 +51,7 @@ export default function ContactSeo() {
                 </script>
 
 
+                <meta name="google-site-verification" content="N-zeL1g6i8H01BkSrgIW_lM7MYrYGG3lVzsGMGvSq4o" />
 
 
                 {/* Google tag (gtag.js) */}
