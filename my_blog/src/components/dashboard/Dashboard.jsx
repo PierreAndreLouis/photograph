@@ -32,7 +32,7 @@ export default function Dashboard() {
       </div>
 
 
-      <div className={`fixed md:hidden top-[3.9rem]  left-0    right-0 z-10  ${sideBar ? "-translate-x-[100%]" : "-translate-x-[00%]"} transition-all duration-300 `}>
+      <div className={`fixed z-20 md:hidden top-[3.9rem]  left-0    right-0 z-10  ${sideBar ? "-translate-x-[100%]" : "-translate-x-[00%]"} transition-all duration-300 `}>
         <div className='md:hiddenb bg-gray-300 dark:bg-gray-800 flex justify-between items-center px-6 py-2'>
           <h1 className='font-bold text-xl'>Categories</h1>
           <p onClick={() => { setsideBar(!sideBar) }} className='text-red-500 w-10 h-10 flex justify-center items-center text-xl cursor-pointer'>X</p>
@@ -41,11 +41,11 @@ export default function Dashboard() {
       </div>
 
       <button onClick={() => { setsideBar(!sideBar) }}
-        className='fixed top-0 left-0 z-10 mt-[4.4rem] md:hidden border w-28 py-1 rounded-sm bg-gray-100 dark:bg-gray-800 border-gray-500 m-3'>
+        className='fixed top-0 left-0 z-10 mt-[4.4rem] md:hidden border bg-white border-gray-400 w-28 py-1 rounded-sm  dark:bg-gray-800 m-3'>
         Pannel
       </button>
 
-      <p className='h-3'></p>
+      <p className='h-10'></p>
 
 
       {/* <div className='w-full mt-20'> */}
