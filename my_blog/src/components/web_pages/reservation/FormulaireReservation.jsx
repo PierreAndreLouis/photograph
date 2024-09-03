@@ -1,38 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import DatePicker from 'react-datepicker';
-import Select from 'react-select';
 import "react-datepicker/dist/react-datepicker.css";
 import emailjs from 'emailjs-com';
 import Footer3 from '../home/Footer3';
 import ReservationSeo from '../../seo/ReservationSeo';
 
-export default function Formulaire_reservation() {
+export default function FormulaireReservation() {
     const [startDate, setStartDate] = useState(null);
-    const [selectedTime, setSelectedTime] = useState(null);
-    const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+
+    // Refs pour les champs du formulaire
+    const nameRef = useRef();
+    const emailRef = useRef();
+    const phoneRef = useRef();
+    const timeRef = useRef();
+    const durationRef = useRef();
+    const timezoneRef = useRef();
+    const serviceRef = useRef();
+    const messageRef = useRef();
 
     function sendMail(e) {
         e.preventDefault(); // Empêche le rechargement de la page
 
         // Vérification des champs requis
-        if (!startDate || !selectedTime) {
+        if (!startDate) {
             alert("Veuillez choisir une date et une heure avant d'envoyer votre message.");
             return;
         }
 
         const params = {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            phone: document.getElementById("phone").value || 'Non fourni',
+            name: nameRef.current.value,
+            email: emailRef.current.value,
+            phone: phoneRef.current.value || 'Non fourni',
             date: startDate.toLocaleDateString('fr-FR'),
-            time: selectedTime.value,
-            duration: document.getElementById("duration").value,
-            timezone: document.getElementById("timezone").value,
-            service: document.getElementById("service").value,
-            message: document.getElementById("message").value,
+            time: timeRef.current.value,
+            duration: durationRef.current.value,
+            timezone: timezoneRef.current.value,
+            service: serviceRef.current.value,
+            message: messageRef.current.value,
         };
 
+        // Vérifie si tous les champs sont remplis
         if (Object.values(params).some(value => !value)) {
             alert("Veuillez remplir tous les champs avant d'envoyer votre message.");
             return;
@@ -42,27 +50,27 @@ export default function Formulaire_reservation() {
 
         const serviceID = "service_29vmgsk";
         const templateID = "template_jt4bvjk";
+        const publicKey = "Y4DfcLA5moa5C1k6K"; // Clé publique
 
-        emailjs.init("Y4DfcLA5moa5C1k6K"); // Clé publique
+        emailjs.init(publicKey);
 
         emailjs.send(serviceID, templateID, params)
             .then(res => {
                 // Réinitialise les champs du formulaire
-                document.getElementById("name").value = "";
-                document.getElementById("email").value = "";
-                document.getElementById("phone").value = "";
+                nameRef.current.value = "";
+                emailRef.current.value = "";
+                phoneRef.current.value = "";
                 setStartDate(null);
-                setSelectedTime(null);
-                document.getElementById("duration").value = "30";
-                document.getElementById("timezone").value = "UTC+00:00";
-                document.getElementById("service").value = "";
-                document.getElementById("message").value = "";
+                timeRef.current.value = "08:30";
+                durationRef.current.value = "30";
+                timezoneRef.current.value = "UTC+00:00";
+                serviceRef.current.value = "";
+                messageRef.current.value = "";
 
-                console.log(res);
                 alert("Votre message a été envoyé avec succès !");
             })
             .catch(err => {
-                console.log(err);
+                console.error(err);
                 alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
             })
             .finally(() => {
@@ -76,177 +84,180 @@ export default function Formulaire_reservation() {
         return day !== 0 && day !== 6; // 0 pour dimanche et 6 pour samedi
     };
 
-    // Générer les options horaires
-    const generateTimeOptions = () => {
-        const options = [];
-        for (let h = 8; h <= 16; h++) {
-            for (let m = 0; m < 60; m += 30) {
-                if (h === 16 && m > 0) break;
-                const time = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
-                options.push({ value: time, label: time });
-            }
-        }
-        return options;
-    };
-
-    const timeOptions = generateTimeOptions();
-
-    const handleTimeChange = (selectedOption) => {
-        setSelectedTime(selectedOption);
-        setError('');
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        if (!selectedTime || !startDate) {
-            setError('Veuillez choisir une date et une heure valides.');
-            return;
-        }
-        // Logique de soumission du formulaire ici
-        console.log('Réservation soumise avec heure:', selectedTime.value);
-    };
-
     return (
-        <div className='mx-2 mt-40 my-20'>
+        <div className='mx-2 py-20'>
             <ReservationSeo />
-            <div className="border mb-40 bg-sky-50 max-w-2xl mx-auto mt-10 shadow-lg rounded-lg overflow-hidden">
-                <div className="text-2xl py-4 px-6 bg-gray-900 text-white text-center font-bold uppercase">
+            <div className="border border-gray-500 mb-40 bg-sky-50 dark:bg-gray-800 max-w-2xl mx-auto mt-10 shadow-lg rounded-lg overflow-hidden">
+                <div className="text-2xl py-4 px-6 bg-gray-900 dark:bg-gray-700 text-white text-center font-bold uppercase">
                     Réserver une session de coaching
                 </div>
-                <form className="py-4 px-6" onSubmit={handleSubmit}>
+                <form className="py-4 px-6" onSubmit={sendMail}>
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
+                        <label className="block text-gray-700 dark:text-gray-300 font-bold mb-2" htmlFor="name">
                             Nom
                         </label>
                         <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="name" type="text" placeholder="Entrez votre nom" required />
+                            className="shadow appearance-none border rounded w-full py-3 px-3 dark:bg-gray-700 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline"
+                            id="name" type="text" placeholder="Entrez votre nom" ref={nameRef} required />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
+                        <label className="block text-gray-700 dark:text-gray-300 font-bold mb-2" htmlFor="email">
                             Email
                         </label>
                         <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="email" type="email" placeholder="Entrez votre email" required />
+                            className="shadow appearance-none border rounded w-full py-3 dark:bg-gray-700 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline"
+                            id="email" type="email" placeholder="Entrez votre email" ref={emailRef} required />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-bold mb-2" htmlFor="phone">
+                        <label className="block text-gray-700 dark:text-gray-300 font-bold mb-2" htmlFor="phone">
                             Numéro de téléphone (optionnel)
                         </label>
                         <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="phone" type="tel" placeholder="Entrez votre numéro de téléphone" />
+                            className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 dark:bg-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline"
+                            id="phone" type="tel" placeholder="Entrez votre numéro de téléphone" ref={phoneRef} />
                     </div>
 
-
                     <div className='md:grid md:grid-cols-2 gap-4 items-center'>
-
                         <div className='grid'>
-                            <label className="block text-gray-700 font-bold mb-2" htmlFor="date">Date :</label>
+                            <label className="block text-gray-700 dark:text-gray-300 font-bold mb-2" htmlFor="date">Date :</label>
                             <DatePicker
                                 id="date"
                                 selected={startDate}
                                 onChange={(date) => setStartDate(date)}
                                 filterDate={isWeekday}
                                 dateFormat="dd/MM/yyyy"
-                                className="w-full p-2 mb-4 border rounded"
+                                className="w-full p-2 mb-4 border rounded dark:bg-gray-700 dark:text-gray-300"
                                 placeholderText="Choisissez une date"
                                 required
                             />
                         </div>
 
                         <div className="mb-4">
-                            <label className="block text-gray-700 font-bold mb-2" htmlFor="time">
+                            <label className="block text-gray-700 dark:text-gray-300 font-bold mb-2" htmlFor="time">
                                 Heure
                             </label>
-                            <Select
-                                id="time"
-                                value={selectedTime}
-                                onChange={handleTimeChange}
-                                options={timeOptions}
-                                placeholder="Choisissez une heure"
+                            <select
+                                name='time'
                                 required
-                                className="bg-white border-gray-500 shadow appearance-none border rounded w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            />
-                            {error && <p className="text-red-500">{error}</p>}
+                                className="w-full p-2 border rounded dark:bg-gray-700 dark:text-gray-300"
+                                id='time'
+                                ref={timeRef}>
+                                {/* Options des heures */}
+                                <option value="08:30">08:30</option>
+                                <option value="09:00">09:00</option>
+                                <option value="09:30">09:30</option>
+                                <option value="10:00">10:00</option>
+                                <option value="10:30">10:30</option>
+                                <option value="11:00">11:00</option>
+                                <option value="11:30">11:30</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:00">15:00</option>
+                                <option value="15:30">15:30</option>
+                                <option value="16:00">16:00</option>
+                                <option value="16:30">16:30</option>
+                                <option value="17:00">17:00</option>
+                                <option value="17:30">17:30</option>
+                            </select>
                         </div>
                     </div>
 
-
-
                     <div>
-                        <label htmlFor="timezone" className="block text-gray-700 font-bold mb-2">Fuseau horaire :</label>
-                        <select id="timezone" name="timezone" required className="w-full p-2 mb-4 border rounded">
-                            {/* Options des fuseaux horaires */}
+                        <label htmlFor="timezone" className="block text-gray-700 dark:text-gray-300 font-bold mb-2">Fuseau horaire :</label>
+                        <select id="timezone"
+                            name="timezone"
+                            required
+                            className="w-full p-2 mb-4 border rounded dark:bg-gray-700 dark:text-gray-300"
+                            ref={timezoneRef}>
                             <option value="UTC-12:00">UTC-12:00</option>
                             <option value="UTC-11:00">UTC-11:00</option>
-                            <option value="UTC-10:00">UTC-10:00 (Hawaii)</option>
-                            <option value="UTC-09:00">UTC-09:00 (Alaska)</option>
-                            <option value="UTC-08:00">UTC-08:00 (Pacifique US & Canada)</option>
-                            <option value="UTC-07:00">UTC-07:00 (Mountain US & Canada)</option>
-                            <option value="UTC-06:00">UTC-06:00 (Central US & Canada)</option>
-                            <option value="UTC-05:00">UTC-05:00 (Eastern US & Canada)</option>
-                            <option value="UTC-04:00">UTC-04:00 (Atlantique)</option>
-                            <option value="UTC-03:00">UTC-03:00 (Brésil)</option>
+                            <option value="UTC-10:00">UTC-10:00</option>
+                            <option value="UTC-09:00">UTC-09:00</option>
+                            <option value="UTC-08:00">UTC-08:00</option>
+                            <option value="UTC-07:00">UTC-07:00</option>
+                            <option value="UTC-06:00">UTC-06:00</option>
+                            <option value="UTC-05:00">UTC-05:00</option>
+                            <option value="UTC-04:00">UTC-04:00</option>
+                            <option value="UTC-03:00">UTC-03:00</option>
                             <option value="UTC-02:00">UTC-02:00</option>
-                            <option value="UTC-01:00">UTC-01:00 (Açores)</option>
-                            <option value="UTC+00:00">UTC+00:00 (Londres)</option>
-                            <option value="UTC+01:00">UTC+01:00 (Paris)</option>
-                            <option value="UTC+02:00">UTC+02:00 (Athènes)</option>
-                            <option value="UTC+03:00">UTC+03:00 (Moscou)</option>
-                            <option value="UTC+04:00">UTC+04:00 (Dubaï)</option>
-                            <option value="UTC+05:00">UTC+05:00 (Islamabad)</option>
-                            <option value="UTC+06:00">UTC+06:00 (Dhaka)</option>
-                            <option value="UTC+07:00">UTC+07:00 (Bangkok)</option>
-                            <option value="UTC+08:00">UTC+08:00 (Pékin, Singapour)</option>
-                            <option value="UTC+09:00">UTC+09:00 (Tokyo)</option>
-                            <option value="UTC+10:00">UTC+10:00 (Sydney)</option>
+                            <option value="UTC-01:00">UTC-01:00</option>
+                            <option value="UTC+00:00">UTC+00:00</option>
+                            <option value="UTC+01:00">UTC+01:00</option>
+                            <option value="UTC+02:00">UTC+02:00</option>
+                            <option value="UTC+03:00">UTC+03:00</option>
+                            <option value="UTC+04:00">UTC+04:00</option>
+                            <option value="UTC+05:00">UTC+05:00</option>
+                            <option value="UTC+06:00">UTC+06:00</option>
+                            <option value="UTC+07:00">UTC+07:00</option>
+                            <option value="UTC+08:00">UTC+08:00</option>
+                            <option value="UTC+09:00">UTC+09:00</option>
+                            <option value="UTC+10:00">UTC+10:00</option>
                             <option value="UTC+11:00">UTC+11:00</option>
-                            <option value="UTC+12:00">UTC+12:00 (Fidji)</option>
+                            <option value="UTC+12:00">UTC+12:00</option>
                         </select>
                     </div>
 
-                    <div>
-                        <label htmlFor="duration" className="block text-gray-700 font-bold mb-2">Durée de la session :</label>
-                        <select id="duration" name="duration" required className="w-full p-2 mb-4 border rounded">
+                    <div className='mb-4'>
+                        <label className="block text-gray-700 dark:text-gray-300 font-bold mb-2" htmlFor="duration">
+                            Durée
+                        </label>
+                        <select
+                            name='duration'
+                            required
+                            className="w-full p-2 border rounded dark:bg-gray-700 dark:text-gray-300"
+                            id='duration'
+                            ref={durationRef}>
+                            {/* Options des durées */}
                             <option value="30">30 minutes</option>
-                            <option value="60">1 heure</option>
+                            <option value="60">60 minutes</option>
+                            <option value="90">90 minutes</option>
+                            <option value="120">120 minutes</option>
                         </select>
                     </div>
 
-
-                    <div className="mb-4">
-                        <label className="block text-gray-700 font-bold mb-2" htmlFor="service">
+                    <div className='mb-4'>
+                        <label className="block text-gray-700 dark:text-gray-300 font-bold mb-2" htmlFor="service">
                             Service
                         </label>
                         <select
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="service" name="service" required>
-                            <option value="">Sélectionnez un service</option>
-                            <option value="executif">Coaching Exécutif</option>
-                            <option value="gestion">Coaching de Gestion</option>
-                            <option value="integration">Coaching d'Intégration</option>
-                            <option value="personnel">Coaching Personnel</option>
+                            name='service'
+                            required
+                            className="w-full p-2 border rounded dark:bg-gray-700 dark:text-gray-300"
+                            id='service'
+                            ref={serviceRef}>
+                            {/* Options des durées */}
+                            <option value="Service1">service 1</option>
+                            <option value="Service2">service2</option>
+                            <option value="Service3">service 3</option>
+                            <option value="Service4">service 4</option>
                         </select>
+    
                     </div>
 
-                    <div className="mb-4">
-                        <label className="block text-gray-700 font-bold mb-2" htmlFor="message">
+                    <div className='mb-4'>
+                        <label className="block text-gray-700 dark:text-gray-300 font-bold mb-2" htmlFor="message">
                             Message
                         </label>
                         <textarea
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="message" rows="4" placeholder="Entrez des informations supplémentaires" required></textarea>
+                            id="message"
+                            className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 dark:bg-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline"
+                            placeholder="Entrez votre message"
+                            rows="4"
+                            ref={messageRef}
+                        />
                     </div>
 
-                    <div className="flex items-center justify-center mb-4">
+                    <div className='text-center'>
                         <button
+                            type="submit"
+                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                             disabled={loading}
-                            onClick={(e) => { sendMail(e) }}
-                            className="bg-gray-900 text-white py-2 px-4 rounded hover:bg-gray-800 focus:outline-none focus:shadow-outline"
-                            type="submit">
-                            {loading ? 'Envoi en cours...' : 'Rendez-vous'}
+                        >
+                            {loading ? 'Envoi en cours...' : 'Envoyer'}
                         </button>
                     </div>
                 </form>
