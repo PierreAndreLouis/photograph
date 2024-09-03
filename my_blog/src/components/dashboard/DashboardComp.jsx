@@ -170,15 +170,18 @@ export default function DashboardComp() {
 
         <div
           className=' flex flex-col lg:flex-1 w-full md:w-autos shadow-md p-2 rounded-md dark:bg-gray-800
-      overflow-auto table-auto  scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500   '
-        >
+          '
+          >
           <div className='flex justify-between  p-3 text-sm font-semibold'>
             <h1 className='text-center p-2'>Recent posts</h1>
             <Button outline gradientDuoTone='purpleToPink'>
               <Link to={'/dashboard?tab=posts'}>See all</Link>
             </Button>
           </div>
-          <div className=' '>
+          <div className=' 
+          overflow-auto table-auto  scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500   
+          
+          '>
             <Table className='Dash_table' hoverable>
               <Table.Head>
                 <Table.HeadCell className='w-20'>Post image</Table.HeadCell>
