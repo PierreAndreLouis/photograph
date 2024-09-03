@@ -18,8 +18,8 @@ export default function About() {
           {/* Component */}
           <div className="flex flex-col gap-8 lg:flex-row lg:gap-10">
             {/* Content */}
-            <div className="flex flex-col gap-8 lg:w-3/5">
-              <h2 className="mb-8 text-3xl font-bold md:text-5xl dark:text-white">About us</h2>
+            <div className="flex flex-col gap-6 lg:w-3/5">
+              <h2 className="mb-0 text-3xl font-bold md:text-5xl dark:text-white">About us</h2>
               <p className="text-sm sm:text-base dark:text-gray-300">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin fermentum leo vel orci. Dui faucibus in ornare quam viverra orci sagittis eu. Viverra nam libero justo laoreet sit amet. Vulputate odio ut enim blandit volutpat maecenas volutpat blandit. A lacus vestibulum sed arcu non odio euismod. Feugiat pretium nibh ipsum consequat. Cum sociis natoque penatibus et. Leo in vitae turpis massa sed. Neque aliquam vestibulum morbi blandit cursus. Facilisis sed odio morbi quis. A pellentesque sit amet porttitor eget.
               </p>

@@ -36,8 +36,8 @@ function Service9() {
             <div className="absolute top-0 left-0 right-0 h-[25rem] bg-sky-500 dark:bg-sky-600 z-[-1] border"></div>
             <main className="flex flex-col items-center">
                 <div className="flex flex-col items-center mb-16 text-center">
-                    <h3 className="text-4xl mb-4 font-semibold  text-sky-600">Prêt à dynamiser votre vie personnel</h3>
-                    <p className="text-md text-gray-600 dark:text-gray-400 mx-auto max-w-2xl">
+                    <h3 className="text-3xl md:text-4xl mb-4 font-semibold  text-sky-600">Prêt à dynamiser votre vie personnel</h3>
+                    <p className="text-sm sm:text-md leading-6 text-gray-600 dark:text-gray-400 mx-auto max-w-2xl">
                         Voici les différents services que nous offrons pour vous aider à améliorer votre visibilité, attirer plus de clients, et atteindre vos objectifs marketing
                     </p>
                 </div>

@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { FaCommentDots, FaReadme, FaRegComment } from "react-icons/fa6";
+import {  FaReadme } from "react-icons/fa6";
 import { MdOutlineDateRange } from "react-icons/md";
-// import { FaSearch } from "react-icons/fa";
-// import { SlLike } from "react-icons/sl";
-// import Blog_page1 from './HeroBlog';
 import { Link } from 'react-router-dom';
 
-
-
-import { Button, Select, TextInput } from 'flowbite-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Side_bar_blog from './Side_bar_blog';
 
@@ -151,7 +145,7 @@ export default function BlogList() {
         <div className='dark:bg-gray-900 pb-72'>
             {/* <Blog_page1 /> */}
             <div className='mt-20 flex flex-col gap-10 md:flex-row md:gap-4 max-w-7xl mx-auto'>
-                <div className='w-[200%]  flex flex-col gap-10 boder-2 border-gray-900'>
+                <div className='w-[100%]  flex flex-col gap-10 boder-2 border-gray-900'>
 
 
 
@@ -204,7 +198,6 @@ export default function BlogList() {
                                             className='post_content text-md'
                                             dangerouslySetInnerHTML={{ __html: post && post.content }}
                                         >
-                                            {/* {post.content} */}
                                         </p>
                                     </div>
 
@@ -236,9 +229,7 @@ export default function BlogList() {
 
 
                 <div>
-                    <Side_bar_blog
-                        setLoading setShowMore
-                    />
+                    <Side_bar_blog  setLoading setShowMore   />
                 </div>
 
 

@@ -16,7 +16,6 @@ export default function Header() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    // Récupère le terme de recherche depuis l'URL
     const urlParams = new URLSearchParams(location.search);
     const searchTermFromUrl = urlParams.get('searchTerm');
     if (searchTermFromUrl) {
@@ -26,7 +25,6 @@ export default function Header() {
 
   const handleSignout = async () => {
     try {
-      // Envoie une requête pour déconnecter l'utilisateur
       const res = await fetch('/api/user/signout', {
         method: 'POST',
       });
@@ -34,7 +32,7 @@ export default function Header() {
       if (!res.ok) {
         console.log(data.message);
       } else {
-        dispatch(signoutSuccess()); // Met à jour l'état de connexion dans Redux
+        dispatch(signoutSuccess());
       }
     } catch (error) {
       console.log(error.message);
@@ -43,36 +41,28 @@ export default function Header() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Crée la chaîne de requête avec le terme de recherche
     const urlParams = new URLSearchParams(location.search);
     urlParams.set('searchTerm', searchTerm);
     const searchQuery = urlParams.toString();
-    navigate(`/search?${searchQuery}`); // Navigue vers la page de recherche
+    navigate(`/search?${searchQuery}`);
   };
 
   return (
-    <Navbar className='border-b-2 fixed z-50 left-0 right-0 top-0'>
-      {/* Logo et lien vers la page d'accueil */}
+    <Navbar className='border-b-2 fixed z-[150] left-0 right-0 top-0'>
       <Link
         to='/'
-        className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'
+        className='self-center whitespace-nowrap text-lg sm:text-2xl font-semibold dark:text-white'
       >
-        <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
-          Pedro's
-        </span>
-        Blog
+        <span className='px-1 py-1 rounded-lg text-sky-600'>Pedro's</span> Blog
       </Link>
 
-      {/* Zone de recherche et boutons */}
-      <div className='flex gap-2 md:order-2'>
-        <Button
-          className='w-10 h-10'
-          color='gray'
-          pill
-          onClick={() => dispatch(toggleTheme())} // Change le thème
+      <div className='flex gap-2 md:order-2 items-center'>
+        <button
+          className='w-8 h-8 border flex justify-center items-center dark:border-gray-600 rounded-full md:w-10 md:h-10'
+          onClick={() => dispatch(toggleTheme())}
         >
           {theme === 'light' ? <FaSun /> : <FaMoon />}
-        </Button>
+        </button>
 
         {currentUser ? (
           <Dropdown
@@ -84,7 +74,9 @@ export default function Header() {
           >
             <Dropdown.Header>
               <span className='block text-sm'>@{currentUser.username}</span>
-              <span className='block text-sm font-medium truncate'>{currentUser.email}</span>
+              <span className='block text-sm font-medium truncate'>
+                {currentUser.email}
+              </span>
             </Dropdown.Header>
 
             <Link to='/dashboard?tab=profile'>
@@ -107,34 +99,73 @@ export default function Header() {
           </Dropdown>
         ) : (
           <Link to='/sign-in'>
-            <Button gradientDuoTone='purpleToBlue' outline>
+            <button className='px-3 py-1 rounded-lg bg-sky-500 text-gray-100'>
               Sign In
-            </Button>
+            </button>
           </Link>
         )}
 
-        <Navbar.Toggle />
+        <Navbar.Toggle className='w-8 h-8 flex justify-center items-center' />
       </div>
 
-      {/* Menu de navigation */}
-      <Navbar.Collapse>
-        <Navbar.Link active={path === '/'} as={'div'}>
-          <Link to='/'>Home</Link>
-        </Navbar.Link>
-        <Navbar.Link active={path === '/about'} as={'div'}>
-          <Link to='/about'>About</Link>
-        </Navbar.Link>
-        <Navbar.Link active={path === '/blogs'} as={'div'}>
-          <Link to='/blogs'>Blogs</Link>
-        </Navbar.Link>
-        <Navbar.Link active={path === '/contact'} as={'div'}>
-          <Link to='/contact'>Contact</Link>
-        </Navbar.Link>
-        <Navbar.Link active={path === '/reservation'} as={'div'}>
-          <Link className='border bg-sky-200 px-4 py-1 rounded-xl text-gray-700 font-bold' to='/reservation'>
-            Rendez-vous
-          </Link>
-        </Navbar.Link>
+      <Navbar.Collapse className=''>
+        <Link to='/' className='grid items-center'>
+          <Navbar.Link
+            active={path === '/'}
+            as={'div'}
+            className={`text-center dark:md:hover:text-sky-500 md:hover:text-sky-700 ${path === '/' ? 'bg-sky-600 text-white rounded-md' : ''
+              }`}
+          >
+            Home
+          </Navbar.Link>
+        </Link>
+
+        <Link to='/about' className='grid items-center'>
+          <Navbar.Link
+            active={path === '/about'}
+            as={'div'}
+            className={`text-center dark:md:hover:text-sky-500 md:hover:text-sky-700  ${path === '/about' ? 'bg-sky-600 text-white rounded-md' : ''
+              }`}
+          >
+            About
+          </Navbar.Link>
+        </Link>
+
+        <Link to='/blogs' className='grid items-center'>
+          <Navbar.Link
+            active={path === '/blogs'}
+            as={'div'}
+            className={`text-center dark:md:hover:text-sky-500 md:hover:text-sky-700  ${path === '/blogs' ? 'bg-sky-600 text-white rounded-md' : ''
+              }`}
+          >
+            Blogs
+          </Navbar.Link>
+        </Link>
+
+        {/* <Link to='/contact' className='grid items-center'>
+          <Navbar.Link
+            active={path === '/contact'}
+            as={'div'}
+            className={`text-center dark:md:hover:text-sky-500 md:hover:text-sky-700  ${path === '/contact' ? 'bg-sky-600 text-white rounded-md' : ''
+              }`}
+          >
+            Contact
+          </Navbar.Link>
+        </Link> */}
+
+        <Link to='/reservation' className='grid items-center'>
+          <Navbar.Link
+            active={path === '/reservation'}
+            as={'div'}
+            className={`text-center ${path === '/reservation' ? 'bg-sky-600 text-white rounded-md' : ''
+              }`}
+          >
+            <p 
+              className='px-3 py-1 rounded-lg border border-sky-600 text-sky-600 text-md' >
+              Rendez-vous
+            </p>
+          </Navbar.Link>
+        </Link>
       </Navbar.Collapse>
     </Navbar>
   );

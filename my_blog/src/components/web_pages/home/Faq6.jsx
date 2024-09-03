@@ -54,7 +54,7 @@ export default function Faq6() {
     };
 
     return (
-        <div className='relative overflow-hidden min-h-screen bg-gray-100 pt-20 px-4 dark:bg-slate-900'>
+        <div className='pb-20 relative overflow-hidden min-h-screen bg-gray-100 pt-20 px-4 dark:bg-slate-900'>
 
             <div className="hidden md:block absolute inset-0 -left-40 ">
                 <div className='w-[105rem] h-[35rem] bg-sky-300/10 dark:bg-sky-800/5 rotate-45'></div>

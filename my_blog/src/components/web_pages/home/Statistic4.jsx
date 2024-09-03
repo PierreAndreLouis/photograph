@@ -20,16 +20,16 @@ export default function Statistic4() {
     ]
 
     return (
-        <section className="py-28 dark:bg-gray-900 bg-white">
-            <div className="max-w-screen-xl mx-auto px-4 text-gray-600 dark:text-gray-300 gap-x-12 items-start justify-between lg:flex md:px-8">
-                <div className="sm:hidden lg:block lg:max-w-xl">
+        <section className="py-20 dark:bg-gray-900 bg-white">
+            <div className="max-w-screen-xl mx-auto px-4 text-gray-600 dark:text-gray-300 gap-12 items-start justify-between  flex flex-col-reverse lg:flex-row md:px-8">
+                <div className=" lg:max-w-xl">
                     <img
                         src="https://images.unsplash.com/photo-1622675363311-3e1904dc1885?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                         className="rounded-lg"
                         alt="pourquoi nous choisir"
                     />
                 </div>
-                <div className="mt-6 gap-12 sm:mt-0 md:flex lg:block">
+                <div className="mt-0 gap-10 sm:mt-0 md:flex lg:block">
                     <div className="max-w-2xl">
                         <h3 className="text-gray-800 dark:text-gray-100 text-3xl font-semibold sm:text-4xl">
                             Nous faisons de notre mieux pour satisfaire nos clients

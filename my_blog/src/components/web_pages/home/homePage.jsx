@@ -16,6 +16,7 @@ import Blog from './Blog';
 import CTA3 from './CTA3';
 import Footer3 from './Footer3';
 import HomeSeo from '../../seo/HomeSeo';
+import Product from './Product';
 
 /**
  * Page d'accueil du site
@@ -38,6 +39,7 @@ export default function HomePage() {
       {voirEtaps && <Service8_4 setVoirEtaps={setVoirEtaps} voirEtaps={voirEtaps} />}
       <Testimonial5 />
       <Company3 />
+      <Product grid={true} />
       <Pricing3 />
       <CTA12 />
       <Faq6 />

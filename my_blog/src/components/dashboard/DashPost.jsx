@@ -93,7 +93,7 @@ export default function DashPosts() {
             <Table.Head>
               <Table.HeadCell>Date updated</Table.HeadCell>
               <Table.HeadCell>Post image</Table.HeadCell>
-              <Table.HeadCell>Post title</Table.HeadCell>
+              <Table.HeadCell className='min-w-80'>Post title</Table.HeadCell>
               <Table.HeadCell>Comment</Table.HeadCell>
               <Table.HeadCell>Category</Table.HeadCell>
               <Table.HeadCell>Delete</Table.HeadCell>

@@ -18,6 +18,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import OnlyAdminPrivateRoute from './components/dashboard/OnlyAdminPrivateRoute';
 import UpdatePost from './components/dashboard/UpdatePost';
 import ScrollToTop from './components/dashboard/ScrollToTop';
+import ProductPage from './components/web_pages/product/ProductPage';
 
 
 export default function App() {
@@ -39,6 +40,7 @@ export default function App() {
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/search' element={<Search />} />
+        <Route path='/product' element={<ProductPage />} />
         <Route path='/post/:postSlug' element={<BlogDetails />} />
 
         {/* Routes protégées */}

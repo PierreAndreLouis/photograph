@@ -244,7 +244,7 @@ export default function DashboardComp() {
               <Table className='Dash_table' hoverable>
                 <Table.Head>
                   <Table.HeadCell className='w-20'>Post image</Table.HeadCell>
-                  <Table.HeadCell>Post Title</Table.HeadCell>
+                  <Table.HeadCell className='min-w-72'>Post Title</Table.HeadCell>
                   <Table.HeadCell>Category</Table.HeadCell>
                 </Table.Head>
                 {posts &&
@@ -256,7 +256,7 @@ export default function DashboardComp() {
                           <img
                             src={post.image}
                             alt='user'
-                            className='w-16 h-10 min-w-16 rounded-md bg-gray-500'
+                            className='w-16 h-10 object-cover min-w-16 rounded-md bg-gray-500'
                           />
                         </Table.Cell>
                         <Table.Cell className='w-96'>{post.title}</Table.Cell>
