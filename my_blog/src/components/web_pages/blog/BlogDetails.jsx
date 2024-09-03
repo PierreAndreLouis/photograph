@@ -74,7 +74,7 @@ export default function BlogDetails() {
 
     return (
         <div className='pt-40 flex flex-col gap-10 md:flex-row md:gap-4 max-w-7xl mx-auto dark:bg-gray-900'>
-            <div className='w-[200%] flex flex-col gap-10 boder-2 border-gray-900'>
+            <div className='w-[100%] flex flex-col gap-10 boder-2 border-gray-900'>
 
 
 
@@ -118,7 +118,7 @@ export default function BlogDetails() {
                         <style>
                             {`
                                 .post_content a {
-                                color: #0099ff;
+                                // color: #0099ff;
                                 background: none !important;
                                 }
                             `}

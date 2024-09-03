@@ -67,7 +67,7 @@ export default function DashboardComp() {
     }
   }, [currentUser]);
   return (
-    <div className='table-auto p-3 w-full max-w-screen-2xl mx-auto overflow-x-auto scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
+    <div className='table-auto p-4 pt-0 w-full max-w-screen-2xl mx-auto overflow-x-auto scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
       {/* <div className='p-3 md:mx-auto'> */}
       {/* ----------------------------------------------------------------------------------- */}
 
@@ -152,7 +152,7 @@ export default function DashboardComp() {
 
 
 
-      <div className='flex flex-col 2xl:flex-row w-full gap-4 py-3 justify-center'>
+      <div className='flex flex-col 2xl:flex-row w-full gap-4 justify-center'>
 
 
         <div className='flex flex-col lg:flex-row w-full gap-4'>

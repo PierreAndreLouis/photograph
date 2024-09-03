@@ -40,7 +40,12 @@ export default function Dashboard() {
         <DashSidebar setsideBar={setsideBar} />
       </div>
 
-      <button onClick={() => { setsideBar(!sideBar) }} className='mt-[4.4rem] md:hidden border w-28 py-1 rounded-sm bg-gray-100 dark:bg-gray-800 border-gray-500 m-3'>Pannel</button>
+      <button onClick={() => { setsideBar(!sideBar) }}
+        className='fixed top-0 left-0 z-10 mt-[4.4rem] md:hidden border w-28 py-1 rounded-sm bg-gray-100 dark:bg-gray-800 border-gray-500 m-3'>
+        Pannel
+      </button>
+
+      <p className='h-3'></p>
 
 
       {/* <div className='w-full mt-20'> */}

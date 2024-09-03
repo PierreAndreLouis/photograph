@@ -189,7 +189,7 @@ export default function BlogList() {
                                         <style>
                                             {`
                                                 .post_content a {
-                                                color: #494949;
+                                                // color: #494949;
                                                 background: none !important;
                                                 }
                                             `}
