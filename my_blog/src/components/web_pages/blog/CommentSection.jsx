@@ -7,7 +7,7 @@ import { HiOutlineExclamationCircle } from 'react-icons/hi';
 
 export default function CommentSection({ postId }) {
 
-  
+
   const { currentUser } = useSelector((state) => state.user);
   const [comment, setComment] = useState('');
   const [commentError, setCommentError] = useState(null);
@@ -15,6 +15,10 @@ export default function CommentSection({ postId }) {
   const [showModal, setShowModal] = useState(false);
   const [commentToDelete, setCommentToDelete] = useState(null);
   const navigate = useNavigate();
+
+
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (comment.length > 200) {
@@ -30,6 +34,9 @@ export default function CommentSection({ postId }) {
           content: comment,
           postId,
           userId: currentUser._id,
+          profilePicture: currentUser.profilePicture,
+          username: currentUser.username
+
         }),
       });
       const data = await res.json();
@@ -56,7 +63,13 @@ export default function CommentSection({ postId }) {
       }
     };
     getComments();
+
   }, [postId]);
+
+
+  const cliked = () => {
+    console.log("currentUser", currentUser)
+  }
 
   const handleLike = async (commentId) => {
     try {
@@ -116,7 +129,7 @@ export default function CommentSection({ postId }) {
     <div className=' mx-auto w-full p-3'>
       {currentUser ? (
         <div className='flex items-center gap-1 my-5 text-gray-500 text-sm'>
-          <p>Signed in as:</p>
+          <p onClick={() => {cliked()}}>Signed in as:</p>
           <img
             className='h-5 w-5 object-cover rounded-full'
             src={currentUser.profilePicture}

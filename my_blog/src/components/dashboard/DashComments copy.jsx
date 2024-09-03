@@ -16,15 +16,8 @@ export default function DashComments() {
         const res = await fetch(`/api/comment/getcomments`);
         const data = await res.json();
         if (res.ok) {
-          const enrichedComments = data.comments.map(comment => ({
-            ...comment,
-            profilePicture: currentUser.profilePicture,
-            username: currentUser.username,
-          }));
-          // Trier les commentaires du plus récent au plus ancien
-          enrichedComments.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
-          setComments(enrichedComments);
-          if (enrichedComments.length < 9) {
+          setComments(data.comments);
+          if (data.comments.length < 9) {
             setShowMore(false);
           }
         }
@@ -45,15 +38,8 @@ export default function DashComments() {
       );
       const data = await res.json();
       if (res.ok) {
-        const enrichedComments = data.comments.map(comment => ({
-          ...comment,
-          profilePicture: currentUser.profilePicture,
-          username: currentUser.username,
-        }));
-        // Trier les nouveaux commentaires du plus récent au plus ancien
-        enrichedComments.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
-        setComments((prev) => [...prev, ...enrichedComments]);
-        if (enrichedComments.length < 9) {
+        setComments((prev) => [...prev, ...data.comments]);
+        if (data.comments.length < 9) {
           setShowMore(false);
         }
       }
@@ -61,7 +47,6 @@ export default function DashComments() {
       console.log(error.message);
     }
   };
-
 
   const handleDeleteComment = async () => {
     try {
@@ -86,29 +71,26 @@ export default function DashComments() {
   };
 
   const clicked = () => {
-    console.log("comment info", comments);
+    console.log("comment info", comments)
   }
 
   return (
     <div className='table-auto overflow-x-scroll md:mx-auto p-3 pt-0 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
-      <button onClick={() => clicked()}>Click me</button>
+      <button onClick={() => (clicked())}>Click me</button>
       {currentUser?.isAdmin && comments.length > 0 ? (
         <>
           <Table hoverable className='shadow-md'>
             <Table.Head>
-              <Table.HeadCell>Date Updated</Table.HeadCell>
               <Table.HeadCell>Profil</Table.HeadCell>
               <Table.HeadCell>Username</Table.HeadCell>
               <Table.HeadCell>Comment Content</Table.HeadCell>
               <Table.HeadCell>Number of Likes</Table.HeadCell>
+              <Table.HeadCell>Date Updated</Table.HeadCell>
               <Table.HeadCell>Delete</Table.HeadCell>
             </Table.Head>
             {comments.map((comment) => (
               <Table.Body className='divide-y' key={comment._id}>
                 <Table.Row className='bg-white dark:border-gray-700 dark:bg-gray-800'>
-                    <Table.Cell>
-                      {new Date(comment.updatedAt).toLocaleDateString()}
-                    </Table.Cell>
                   <Table.Cell>
                     <img
                       src={comment.profilePicture}
@@ -119,6 +101,9 @@ export default function DashComments() {
                   <Table.Cell>{comment.username}</Table.Cell>
                   <Table.Cell>{comment.content}</Table.Cell>
                   <Table.Cell>{comment.numberOfLikes}</Table.Cell>
+                  <Table.Cell>
+                    {new Date(comment.updatedAt).toLocaleDateString()}
+                  </Table.Cell>
                   <Table.Cell>
                     <span
                       onClick={() => {

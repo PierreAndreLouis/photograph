@@ -14,6 +14,14 @@ const commentSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        profilePicture: {
+            type: String,
+            // required: true, // Mettez `true` si vous souhaitez que ce champ soit obligatoire.
+        },
+        username: {
+            type: String,
+            // required: true, // Mettez `true` si vous souhaitez que ce champ soit obligatoire.
+        },
         likes: {
             type: Array,
             default: [],
