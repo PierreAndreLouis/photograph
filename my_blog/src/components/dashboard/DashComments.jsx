@@ -85,9 +85,14 @@ export default function DashComments() {
     }
   };
 
-  const clicked = () => {
-    console.log("comment info", comments);
-  }
+
+
+
+  const formatDate = (dateString) => {
+    const options = { day: '2-digit', month: '2-digit', year: '2-digit' };
+    const date = new Date(dateString);
+    return date.toLocaleDateString('fr-FR', options);
+  };
 
   return (
     <div className='table-auto overflow-x-scroll md:mx-auto p-3 pt-0 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
@@ -107,7 +112,8 @@ export default function DashComments() {
               <Table.Body className='divide-y' key={comment._id}>
                 <Table.Row className='bg-white dark:border-gray-700 dark:bg-gray-800'>
                     <Table.Cell>
-                      {new Date(comment.updatedAt).toLocaleDateString()}
+                    {/* {new Date(comment.updatedAt).toLocaleDateString()} */}
+                    {formatDate(comment.updatedAt)}
                     </Table.Cell>
                   <Table.Cell>
                     <img

@@ -85,6 +85,19 @@ export default function DashPosts() {
     }
   };
 
+
+
+  const formatDate = (dateString) => {
+    const options = { day: '2-digit', month: '2-digit', year: '2-digit' };
+    const date = new Date(dateString);
+    return date.toLocaleDateString('fr-FR', options);
+  };
+
+
+  console.log("userPost,", userPosts)
+
+
+
   return (
     <div className='table-auto overflow-x-scroll md:mx-auto p-4 pt-0 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
       {currentUser.isAdmin && userPosts.length > 0 ? (
@@ -104,13 +117,16 @@ export default function DashPosts() {
             {userPosts.map((post) => (
               <Table.Body className='divide-y' key={post._id}>
                 <Table.Row className='bg-white dark:border-gray-700 dark:bg-gray-800'>
-                  <Table.Cell>{new Date(post.updatedAt).toLocaleDateString()}</Table.Cell>
+                  <Table.Cell>
+                    {formatDate(post.updatedAt)}
+                    {/* {new Date(post.updatedAt).toLocaleDateString()} */}
+                  </Table.Cell>
                   <Table.Cell>
                     <Link to={`/post/${post.slug}`}>
                       <img
                         src={post.image}
                         alt={post.title}
-                        className='w-20 h-10 object-cover bg-gray-500'
+                        className='min-w-24 h-14 object-cover bg-gray-500'
                       />
                     </Link>
                   </Table.Cell>
