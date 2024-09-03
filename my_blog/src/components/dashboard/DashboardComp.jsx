@@ -86,7 +86,9 @@ export default function DashboardComp() {
                 <Link to={'/dashboard?tab=users'}>See all</Link>
               </Button>
             </div>
-            <div className=' table_box'>
+            <div className=' table_boxe
+              overflow-auto table-auto  scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500  
+            '>
 
               <Table hoverable>
                 <Table.Head>
@@ -113,7 +115,7 @@ export default function DashboardComp() {
           </div>
 
 
-          
+
 
 
 
