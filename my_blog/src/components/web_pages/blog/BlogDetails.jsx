@@ -74,14 +74,14 @@ export default function BlogDetails() {
 
     return (
         <div className='pt-40 flex flex-col gap-10 md:flex-row md:gap-4 max-w-7xl mx-auto dark:bg-gray-900'>
-            <div className='w-[100%] flex flex-col gap-10 boder-2 border-gray-900'>
+            <div className='w-[100%] flex flex-col gap-10 boder-2 '>
 
 
 
 
 
 
-                <div className='bg-gray-100 dark:bg-gray-800 grid gap-4 mx-4 rounded-xl overflow-hidden'>
+                <div className='bg-gray-100 dark:bg-gray-800 grid gap-4 md:mx-4 rounded-xl overflow-hidden'>
                     <div className='relative w-full  h-[18rem] sm:h-[20rem] md:h-[24rem] lg:h-[25rem] xl:h-[26rem]  ' >
                         <img className='w-full h-full object-cover'
                             src={post && post.image}

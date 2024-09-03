@@ -85,7 +85,7 @@ export default function FormulaireReservation() {
     };
 
     return (
-        <div className='mx-2 py-20'>
+        <div className='mx-2 pt-20'>
             <ReservationSeo />
             <div className="border border-gray-500 mb-40 bg-sky-50 dark:bg-gray-800 max-w-2xl mx-auto mt-10 shadow-lg rounded-lg overflow-hidden">
                 <div className="text-2xl py-4 px-6 bg-gray-900 dark:bg-gray-700 text-white text-center font-bold uppercase">
