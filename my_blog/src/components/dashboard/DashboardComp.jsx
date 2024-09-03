@@ -159,7 +159,7 @@ export default function DashboardComp() {
                         }</Table.Cell>
                         {/* ----------------- */}
 
-                        <Table.Cell className='w-96'>
+                        <Table.Cell className='lg:max-w-[15rem] xl:max-w-full'>
                           <p className='line-clamp-2'>{comment.content}</p>
                         </Table.Cell>
                         <Table.Cell>{comment.numberOfLikes}</Table.Cell>
