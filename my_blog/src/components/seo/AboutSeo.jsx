@@ -1,69 +1,57 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async';
 
-
 export default function AboutSeo() {
     return (
         <div>
             {/* Helmet pour les balises SEO */}
             <Helmet>
                 {/* Titre de la page */}
-                <title>About - Pierre-André Louis | Création de Sites Web Professionnels</title>
+                <title>À Propos - Pierre-André Louis | Coaching Professionnel</title>
 
                 {/* Meta Description */}
                 <meta
                     name="description"
-                    content="Découvrez nos services de création de sites web professionnels pour freelancers et entrepreneurs. Boostez votre présence en ligne avec un site moderne et attractif."
+                    content="En savoir plus sur Pierre-André Louis, coach professionnel dédié à aider les individus à atteindre leurs objectifs personnels et professionnels. Découvrez notre approche et notre engagement envers votre succès."
                 />
 
-                
-
                 {/* Mots-clés SEO */}
-                <meta name="keywords" content="création site web, web design, développement web, freelance, portfolio, site vitrine, design UX, site responsive" />
+                <meta name="keywords" content="coaching professionnel, développement personnel, gestion de carrière, mentorat, coach, accompagnement professionnel, coaching en ligne" />
 
                 {/* Open Graph Tags */}
-                <meta property="og:title" content="Accueil - Pierre-André Louis | Création de Sites Web Professionnels" />
-                <meta property="og:description" content="Découvrez nos services de création de sites web professionnels pour freelancers et entrepreneurs." />
-                <meta property="og:image" content="https://mon-site.com/images/home-page.jpg" />{/* <!-- Remplace avec une URL d'image appropriée --> */}
+                <meta property="og:title" content="À Propos - Pierre-André Louis | Coaching Professionnel" />
+                <meta property="og:description" content="En savoir plus sur Pierre-André Louis, coach professionnel dédié à votre succès personnel et professionnel." />
+                <meta property="og:image" content="https://mon-site.com/images/about-page.jpg" /> {/* Remplace par une URL d'image appropriée */}
 
-                <meta property="og:url" content="https://mon-site.com" />
+                <meta property="og:url" content="https://mon-site.com/about" />
                 <meta property="og:type" content="website" />
 
                 {/* Twitter Card Tags */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Accueil - Pierre-André Louis | Création de Sites Web Professionnels" />
-                <meta name="twitter:description" content="Découvrez nos services de création de sites web professionnels pour freelancers et entrepreneurs." />
-                <meta name="twitter:image" content="https://mon-site.com/images/home-page.jpg" />
+                <meta name="twitter:title" content="À Propos - Pierre-André Louis | Coaching Professionnel" />
+                <meta name="twitter:description" content="Découvrez l'approche et l'engagement de Pierre-André Louis pour vous aider à atteindre vos objectifs professionnels." />
+                <meta name="twitter:image" content="https://mon-site.com/images/about-page.jpg" />
 
                 {/* JSON-LD pour le SEO structuré */}
                 <script type="application/ld+json">
                     {`
             {
               "@context": "http://schema.org",
-              "@type": "WebSite",
+              "@type": "Person",
               "name": "Pierre-André Louis",
-              "url": "https://mon-site.com",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://mon-site.com/search?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-              }
+              "jobTitle": "Coach Professionnel",
+              "url": "https://mon-site.com/about",
+              "image": "https://mon-site.com/images/about-page.jpg",
+              "description": "Pierre-André Louis est un coach professionnel spécialisé dans l'accompagnement des individus pour atteindre leurs objectifs personnels et professionnels.",
+              "sameAs": [
+                "https://www.linkedin.com/in/pierre-andre-louis",
+                "https://twitter.com/pierreandrelouis"
+              ]
             }
           `}
                 </script>
 
-
-
-
-
-
-
-
-
-
-
                 <meta name="google-site-verification" content="N-zeL1g6i8H01BkSrgIW_lM7MYrYGG3lVzsGMGvSq4o" />
-
 
                 {/* Google tag (gtag.js) */}
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFV9GQVC5K"></script>
@@ -76,11 +64,6 @@ export default function AboutSeo() {
                         gtag('config', 'G-GFV9GQVC5K');
                     `}
                 </script>
-
-
-
-
-
             </Helmet>
         </div>
     )
