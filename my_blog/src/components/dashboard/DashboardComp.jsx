@@ -9,6 +9,10 @@ export default function DashboardComp() {
   const [comments, setComments] = useState([]);
   const [posts, setPosts] = useState([]);
   const { currentUser } = useSelector((state) => state.user);
+
+
+
+
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -133,6 +137,10 @@ export default function DashboardComp() {
 
               <Table hoverable>
                 <Table.Head>
+                  {/* ----------------- */}
+                  <Table.HeadCell>Profile</Table.HeadCell>
+                  {/* ----------------- */}
+
                   <Table.HeadCell>Comment content</Table.HeadCell>
                   <Table.HeadCell>Likes</Table.HeadCell>
                 </Table.Head>
@@ -140,6 +148,17 @@ export default function DashboardComp() {
                   comments.map((comment) => (
                     <Table.Body key={comment._id} className='divide-y'>
                       <Table.Row className='bg-white dark:border-gray-700 dark:bg-gray-800'>
+
+                        {/* ----------------- */}
+                        <Table.Cell>{
+                          <img
+                            src={comment.profilePicture}
+                            alt={comment.username}
+                            className='w-10 h-10 object-cover bg-gray-500 rounded-full'
+                          />
+                        }</Table.Cell>
+                        {/* ----------------- */}
+
                         <Table.Cell className='w-96'>
                           <p className='line-clamp-2'>{comment.content}</p>
                         </Table.Cell>
@@ -171,7 +190,7 @@ export default function DashboardComp() {
         <div
           className=' flex flex-col lg:flex-1 w-full md:w-autos shadow-md p-2 rounded-md dark:bg-gray-800
           '
-          >
+        >
           <div className='flex justify-between  p-3 text-sm font-semibold'>
             <h1 className='text-center p-2'>Recent posts</h1>
             <Button outline gradientDuoTone='purpleToPink'>
