@@ -35,9 +35,9 @@ export default function OAuth() {
         }
     }
     return (
-        <button type='button' className='border rounded-md border-sky-500 textsk flex justify-center items-center py-2'  onClick={handleGoogleClick}>
+        <button type='button' className='border rounded-md border-sky-500 text-sky-500 flex justify-center items-center py-2' onClick={handleGoogleClick}>
             <AiFillGoogleCircle className='w-6 h-6 mr-2' />
-            Continue with Google
+            Continuer avec Google
         </button>
     )
 }

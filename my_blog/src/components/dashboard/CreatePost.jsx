@@ -25,7 +25,7 @@ export default function CreatePost() {
   const handleUpdloadImage = async () => {
     try {
       if (!file) {
-        setImageUploadError('Please select an image');
+        setImageUploadError('Veuillez sélectionner une image');
         return;
       }
       setImageUploadError(null);
@@ -41,7 +41,7 @@ export default function CreatePost() {
           setImageUploadProgress(progress.toFixed(0));
         },
         (error) => {
-          setImageUploadError('Image upload failed');
+          setImageUploadError('Échec du téléchargement de l’image');
           setImageUploadProgress(null);
         },
         () => {
@@ -53,11 +53,12 @@ export default function CreatePost() {
         }
       );
     } catch (error) {
-      setImageUploadError('Image upload failed');
+      setImageUploadError('Échec du téléchargement de l’image');
       setImageUploadProgress(null);
       console.log(error);
     }
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -79,17 +80,18 @@ export default function CreatePost() {
         navigate(`/post/${data.slug}`);
       }
     } catch (error) {
-      setPublishError('Something went wrong');
+      setPublishError('Une erreur est survenue');
     }
   };
+
   return (
-    <div className='p-3 max-w-4xl w-full mx-auto min-h-screen '>
-      <h1 className='text-center text-3xl my-7 font-semibold'>Create a post</h1>
+    <div className='p-3 max-w-4xl w-full mx-auto min-h-screen'>
+      <h1 className='text-center text-3xl my-7 font-semibold'>Créer un post</h1>
       <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
         <div className='flex flex-col gap-4 sm:flex-row justify-between'>
           <TextInput
             type='text'
-            placeholder='Title'
+            placeholder='Titre'
             required
             id='title'
             className='flex-1'
@@ -102,7 +104,7 @@ export default function CreatePost() {
               setFormData({ ...formData, category: e.target.value })
             }
           >
-            <option value='uncategorized'>Select a category</option>   
+            <option value='uncategorized'>Sélectionnez une catégorie</option>
             <option value='javascript'>JavaScript</option>
             <option value='reactjs'>React.js</option>
             <option value='nextjs'>Next.js</option>
@@ -130,7 +132,7 @@ export default function CreatePost() {
                 />
               </div>
             ) : (
-              'Upload Image'
+              'Télécharger l’image'
             )}
           </Button>
         </div>
@@ -144,7 +146,7 @@ export default function CreatePost() {
         )}
         <ReactQuill
           theme='snow'
-          placeholder='Write something...'
+          placeholder='Écrivez quelque chose...'
           className='h-72 mb-12'
           required
           onChange={(value) => {
@@ -152,7 +154,7 @@ export default function CreatePost() {
           }}
         />
         <Button type='submit' gradientDuoTone='purpleToPink'>
-          Publish
+          Publier
         </Button>
         {publishError && (
           <Alert className='mt-5' color='failure'>

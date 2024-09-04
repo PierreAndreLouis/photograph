@@ -42,7 +42,7 @@ export default function Dashboard() {
 
       <button onClick={() => { setsideBar(!sideBar) }}
         className='fixed top-0 left-0 z-10 mt-[4.4rem] md:hidden border bg-white border-gray-400 dark:border-gray-600 w-28 py-1 rounded-sm  dark:bg-gray-800 m-3'>
-        Dashboard
+        Menu
       </button>
 
       <p className='h-10'></p>

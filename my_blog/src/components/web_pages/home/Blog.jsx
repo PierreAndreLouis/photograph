@@ -23,11 +23,11 @@ export default function Blog() {
 
           <section className="flex flex-col justify-center max-w-6xl min-h-screen px-4 py-10 mx-auto sm:px-6 bg-white dark:bg-gray-900">
             <div className="flex flex-col items-center justify-between mb-14">
-              <h2 className="mr-10 text-4xl font-mediumm md:text-5xl text-gray-900 dark:text-gray-100">
+              <h2 className="mr-10 text-3xl font-semibold text-sky-500 dark:text-gray-100">
                 Découvrez Nos Derniers Articles
               </h2>
               <a href="#"
-                className="block pb-1 mt-2 text-base text-blue-600 dark:text-blue-400 uppercase border-b border-transparent hover:border-blue-600 dark:hover:border-blue-400">
+                className="block pb-1 mt-2 text-base text-sky-600 dark:text-sky-400 uppercase border-b border-transparent hover:border-sky-600 dark:hover:border-sky-400">
                 - Lire Plus -
               </a>
             </div>
@@ -44,18 +44,18 @@ export default function Blog() {
                   />
                   <div className="flex flex-col rounded-b-xl px-4 py-6 bg-gray-100 dark:bg-gray-800 border border-gray-400 dark:border-gray-600">
                     <p href="#"
-                      className="inline-block mb-3 text-xs capitalize border-b-2 border-blue-600 dark:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400">
+                      className="inline-block mb-3 text-xs capitalize border-b-2 border-sky-600 dark:border-sky-400 hover:text-sky-600 dark:hover:text-sky-400">
                       {post.category}
                     </p>
                     <h3 href="#"
-                      className=" line-clamp-2 mb-2 text-xl font-black leading-tight hover:underline hover:text-blue-600 dark:hover:text-blue-400">
+                      className=" line-clamp-2 mb-2 text-xl font-black leading-tight hover:underline hover:text-sky-600 dark:hover:text-sky-400">
                       {post.title}
                     </h3>
                     <p className="mb-4 line-clamp-4 text-gray-600 leading-5 text-sm dark:text-gray-300">
                       Découvrez des conseils essentiels pour créer un plan marketing réussi qui génère des résultats et stimule la croissance de votre entreprise.
                     </p>
                     <a href="#"
-                      className="inline-block pb-1 text-base font-black text-blue-600 dark:text-blue-400 uppercase border-b border-transparent hover:border-blue-600 dark:hover:border-blue-400">
+                      className="inline-block pb-1 text-base font-black text-sky-600 dark:text-sky-400 uppercase border-b border-transparent hover:border-sky-600 dark:hover:border-sky-400">
                       Lire Plus -
                     </a>
                   </div>

@@ -7,45 +7,43 @@ export default function Faq6() {
     const faqItems = [
         {
             id: 1,
-            question: 'Quel est le délai pour obtenir votre premier article de blog ?',
-            answer: 'Le délai pour préparer votre premier article de blog est de 2 à 3 semaines. Cela inclut la recherche approfondie et la création de votre stratégie de marketing de contenu mensuelle avant la rédaction de votre premier article.'
+            question: 'Combien de temps faut-il pour voir les premiers résultats de votre coaching ?',
+            answer: 'Les premiers résultats peuvent généralement être observés après 4 à 6 semaines, en fonction de votre engagement et de la nature des objectifs fixés.'
         },
         {
             id: 2,
-            question: 'Comment puis-je suivre l\'avancement de ma commande ?',
-            answer: 'Vous pouvez suivre l\'avancement de votre commande directement depuis votre espace client sur notre site web.'
+            question: 'Quels sont les formats de coaching que vous proposez ?',
+            answer: 'Nous proposons des séances de coaching individuelles, des sessions de groupe, ainsi que des programmes de coaching en ligne pour répondre à vos besoins spécifiques.'
         },
         {
             id: 3,
-            question: 'Quels sont les moyens de paiement acceptés ?',
-            answer: 'Nous acceptons les paiements par carte bancaire, PayPal et virement bancaire.'
+            question: 'Comment puis-je réserver une séance de coaching ?',
+            answer: 'Vous pouvez réserver une séance de coaching directement depuis notre site web en accédant à l\'onglet "Réservation" ou en nous contactant par e-mail.'
         },
         {
             id: 4,
-            question: 'Quel est le délai pour obtenir votre premier article de blog ?',
-            answer: 'Le délai pour préparer votre premier article de blog est de 2 à 3 semaines. Cela inclut la recherche approfondie et la création de votre stratégie de marketing de contenu mensuelle avant la rédaction de votre premier article.'
+            question: 'Y a-t-il des offres spéciales pour les nouveaux clients ?',
+            answer: 'Oui, nous offrons souvent des réductions ou des séances gratuites pour les nouveaux clients. Consultez notre page d\'accueil pour plus d\'informations sur les offres actuelles.'
         },
-
-
         {
             id: 5,
-            question: 'Quel est le délai pour obtenir votre premier article de blog ?',
-            answer: 'Le délai pour préparer votre premier article de blog est de 2 à 3 semaines. Cela inclut la recherche approfondie et la création de votre stratégie de marketing de contenu mensuelle avant la rédaction de votre premier article.'
+            question: 'Quelles sont vos méthodes de paiement ?',
+            answer: 'Nous acceptons les paiements par carte bancaire, PayPal et virement bancaire pour plus de flexibilité.'
         },
         {
             id: 6,
-            question: 'Comment puis-je suivre l\'avancement de ma commande ?',
-            answer: 'Vous pouvez suivre l\'avancement de votre commande directement depuis votre espace client sur notre site web.'
+            question: 'Que faire si je dois annuler ou reprogrammer une séance ?',
+            answer: 'Si vous devez annuler ou reprogrammer une séance, veuillez nous en informer au moins 24 heures à l\'avance pour éviter des frais d\'annulation.'
         },
         {
             id: 7,
-            question: 'Quels sont les moyens de paiement acceptés ?',
-            answer: 'Nous acceptons les paiements par carte bancaire, PayPal et virement bancaire.'
+            question: 'Offrez-vous des sessions de coaching gratuites ?',
+            answer: 'Nous proposons des séances de découverte gratuites pour les nouveaux clients afin d\'évaluer vos besoins et vous présenter nos services.'
         },
         {
             id: 8,
-            question: 'Quel est le délai pour obtenir votre premier article de blog ?',
-            answer: 'Le délai pour préparer votre premier article de blog est de 2 à 3 semaines. Cela inclut la recherche approfondie et la création de votre stratégie de marketing de contenu mensuelle avant la rédaction de votre premier article.'
+            question: 'Comment puis-je contacter mon coach en dehors des séances ?',
+            answer: 'Vous pouvez contacter votre coach par e-mail ou via la plateforme de coaching en ligne que nous utilisons, selon l\'accord que vous avez établi lors de votre inscription.'
         },
     ];
 
@@ -69,7 +67,7 @@ export default function Faq6() {
                 <div className='grid lg:grid-cols-2 gap-6 justify-start items-start'>
 
 
-       
+
 
 
                     <div className='grid gap-8 '>
@@ -77,10 +75,12 @@ export default function Faq6() {
                             <div key={item.id} className='grid bg-white rounded-xl dark:bg-slate-800'>
                                 <h3
                                     onClick={() => toggleFAQ(item.id)}
-                                    className={`bg-white rounded-xl leading-[1.5rem] transition-all duration-300 ${active_id === item.id ? 'sh-[100%] rounded-t-xl' : 'sh-[1rem] rounded-xl'} 
-                                border border-gray-50 dark:border-gray-600 cursor-pointer bg-gray-100 flex gap-3 items-center p-3 text-lg font-semibold text-gray-600 dark:bg-slate-800 dark:text-gray-300`}
+                                    className={`bg-white rounded-xl text-[1.1rem] leading-[1.5rem] transition-all duration-300 ${active_id === item.id ? 'sh-[100%] rounded-t-xl' : 'sh-[1rem] rounded-xl'} 
+                                border border-gray-50 dark:border-gray-600 cursor-pointer bg-gray-100 flex gap-3 items-center p-3 text-lg 
+                                 text-gray-600 dark:bg-slate-800 dark:text-gray-300`}
                                 >
-                                    <FaChevronDown className={`${active_id === item.id ? "rotate-180" : "rotate-0"} text-4xl xl:text-xl transition-all duration-300}`} />
+                                    <FaChevronDown
+                                        className={`${active_id === item.id ? "rotate-180" : "rotate-0"} text-3xl xl:text-xl transition-all duration-300}`} />
                                     {item.question}
                                 </h3>
                                 <p
@@ -98,10 +98,12 @@ export default function Faq6() {
                             <div key={item.id} className='grid bg-white rounded-xl dark:bg-slate-800'>
                                 <h3
                                     onClick={() => toggleFAQ(item.id)}
-                                    className={`bg-white rounded-xl leading-[1.5rem] transition-all duration-300 ${active_id === item.id ? 'sh-[100%] rounded-t-xl' : 'sh-[1rem] rounded-xl'} 
-                                border border-gray-50 dark:border-gray-600 cursor-pointer bg-gray-100 flex gap-3 items-center p-3 text-lg font-semibold text-gray-600 dark:bg-slate-800 dark:text-gray-300`}
+                                    className={`bg-white rounded-xl text-[1.1rem] leading-[1.5rem] transition-all duration-300 ${active_id === item.id ? 'sh-[100%] rounded-t-xl' : 'sh-[1rem] rounded-xl'} 
+                                border border-gray-50 dark:border-gray-600 cursor-pointer bg-gray-100 flex gap-3 items-center p-3 text-lg 
+                                 text-gray-600 dark:bg-slate-800 dark:text-gray-300`}
                                 >
-                                    <FaChevronDown className={`${active_id === item.id ? "rotate-180" : "rotate-0"} text-4xl xl:text-xl transition-all duration-300}`} />
+                                    <FaChevronDown
+                                        className={`${active_id === item.id ? "rotate-180" : "rotate-0"} text-3xl xl:text-xl transition-all duration-300}`} />
                                     {item.question}
                                 </h3>
                                 <p
@@ -112,11 +114,7 @@ export default function Faq6() {
                             </div>
                         ))}
                     </div>
-
-
-             
                 </div>
-
             </div>
         </div>
     );

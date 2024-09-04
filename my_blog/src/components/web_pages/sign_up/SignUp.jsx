@@ -1,6 +1,6 @@
-import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react'
-import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import OAuth from '../../dashboard/OAuth';
 
 export default function SignUp() {
@@ -9,21 +9,14 @@ export default function SignUp() {
   const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
 
-
-
-
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
-  }
-
-
-
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.username || !formData.email || !formData.password) {
-      return setErrorMessage('Please fill out all fields.');
+      return setErrorMessage('Veuillez remplir tous les champs.');
     }
 
     try {
@@ -49,11 +42,10 @@ export default function SignUp() {
     }
   };
 
-
   return (
-    <div className='min-h-screen flex justify-center items-center '>
-      <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row  gap-8'>
-        {/* left */}
+    <div className='min-h-screen flex justify-center items-center'>
+      <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row gap-8'>
+        {/* Gauche */}
         <div className='flex-1'>
           <Link to='/' className='font-bold dark:text-white text-4xl'>
             <span className='px-2 py-1 text-sky-500 rounded-lg'>
@@ -62,64 +54,60 @@ export default function SignUp() {
             Blog
           </Link>
           <p className='text-sm mt-5'>
-            This is a demo project. You can sign up with your email and password
-            or with Google.
+            Il s'agit d'un projet de démonstration. Vous pouvez vous inscrire avec votre e-mail et votre mot de passe ou avec Google.
           </p>
         </div>
 
-
-
-        {/* right */}
-
+        {/* Droite */}
         <div className='flex-1'>
           <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
             <div>
-              <Label value='Your username' />
+              <Label value='Votre nom d’utilisateur' />
               <TextInput
                 type='text'
-                placeholder='Username'
+                placeholder='Nom d’utilisateur'
                 id='username'
                 onChange={handleChange}
               />
             </div>
             <div>
-              <Label value='Your email' />
+              <Label value='Votre e-mail' />
               <TextInput
                 type='email'
-                placeholder='name@company.com'
+                placeholder='nom@entreprise.com'
                 id='email'
                 onChange={handleChange}
               />
             </div>
             <div>
-              <Label value='Your password' />
+              <Label value='Votre mot de passe' />
               <TextInput
                 type='password'
-                placeholder='Password'
+                placeholder='Mot de passe'
                 id='password'
                 onChange={handleChange}
               />
             </div>
             <button
-              className='py-2 mt-6 rounded-md bg-sky-500 border-2 border-sky-500'
+              className='py-2 mt-6 rounded-md bg-sky-500 border-2 border-sky-500 text-white'
               type='submit'
               disabled={loading}
             >
               {loading ? (
                 <>
                   <Spinner size='sm' />
-                  <span className='pl-3'>Loading...</span>
+                  <span className='pl-3'>Chargement...</span>
                 </>
               ) : (
-                'Sign Up'
+                'S’inscrire'
               )}
             </button>
             <OAuth />
           </form>
           <div className='flex gap-2 text-sm mt-5'>
-            <span>Have an account?</span>
+            <span>Vous avez un compte ?</span>
             <Link to='/sign-in' className='text-blue-500'>
-              Sign In
+              Se connecter
             </Link>
           </div>
           {errorMessage && (
@@ -130,5 +118,5 @@ export default function SignUp() {
         </div>
       </div>
     </div>
-  )
+  );
 }

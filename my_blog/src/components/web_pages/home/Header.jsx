@@ -69,7 +69,7 @@ export default function Header() {
             arrowIcon={false}
             inline
             label={
-              <Avatar alt='user' img={currentUser.profilePicture} rounded className='w-10 h-10' />
+              <Avatar alt='utilisateur' img={currentUser.profilePicture} rounded className='w-10 h-10' />
             }
           >
             <Dropdown.Header>
@@ -80,7 +80,7 @@ export default function Header() {
             </Dropdown.Header>
 
             <Link to='/dashboard?tab=profile'>
-              <Dropdown.Item>Profile</Dropdown.Item>
+              <Dropdown.Item>Profil</Dropdown.Item>
             </Link>
 
             <Dropdown.Divider />
@@ -88,19 +88,19 @@ export default function Header() {
             {currentUser.isAdmin && (
               <Link to='/dashboard?tab=dash'>
                 <Dropdown.Item labelColor='dark' as='div'>
-                  Dashboard
+                  Tableau de bord
                 </Dropdown.Item>
               </Link>
             )}
 
             <Dropdown.Divider />
 
-            <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
+            <Dropdown.Item onClick={handleSignout}>Déconnexion</Dropdown.Item>
           </Dropdown>
         ) : (
           <Link to='/sign-in'>
             <button className='px-3 py-1 rounded-lg bg-sky-500 text-gray-100'>
-              Sign In
+              Se connecter
             </button>
           </Link>
         )}
@@ -116,7 +116,7 @@ export default function Header() {
             className={`text-center dark:md:hover:text-sky-500 md:hover:text-sky-700 ${path === '/' ? 'bg-sky-600 text-white rounded-md' : ''
               }`}
           >
-            Home
+            Accueil
           </Navbar.Link>
         </Link>
 
@@ -127,7 +127,7 @@ export default function Header() {
             className={`text-center dark:md:hover:text-sky-500 md:hover:text-sky-700  ${path === '/about' ? 'bg-sky-600 text-white rounded-md' : ''
               }`}
           >
-            About
+            À propos
           </Navbar.Link>
         </Link>
 
@@ -142,17 +142,6 @@ export default function Header() {
           </Navbar.Link>
         </Link>
 
-        {/* <Link to='/contact' className='grid items-center'>
-          <Navbar.Link
-            active={path === '/contact'}
-            as={'div'}
-            className={`text-center dark:md:hover:text-sky-500 md:hover:text-sky-700  ${path === '/contact' ? 'bg-sky-600 text-white rounded-md' : ''
-              }`}
-          >
-            Contact
-          </Navbar.Link>
-        </Link> */}
-
         <Link to='/reservation' className='grid items-center'>
           <Navbar.Link
             active={path === '/reservation'}
@@ -160,7 +149,7 @@ export default function Header() {
             className={`text-center ${path === '/reservation' ? 'bg-sky-600 text-white rounded-md' : ''
               }`}
           >
-            <p 
+            <p
               className='px-3 py-1 rounded-lg border border-sky-600 text-sky-600 text-md' >
               Rendez-vous
             </p>

@@ -10,7 +10,7 @@ export default function BlogPage() {
       <BlogSeo />
       <HeroBlog />
       <BlogList />
-      {/* <Footer3 /> */}
+      <Footer3 />
     </div>
   )
 }

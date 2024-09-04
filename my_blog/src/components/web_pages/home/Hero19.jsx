@@ -31,18 +31,18 @@ export const Hero19 = () => {
 
           {/* Étiquette de marque */}
           <p className="inline-block px-5 py-1 mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-sky-400 dark:bg-sky-700 dark:text-sky-300">
-            Brand new
+            Nouveau
           </p>
 
           {/* Titre principal */}
           <h2 className="mb-5 text-3xl xs:text-4xl leading-10 lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-none">
-            Profitez d'un avenir réussi grâce à notre
+            Créez un avenir prometteur grâce à notre
             <span className="text-sky-500"> coaching professionnel </span>
           </h2>
 
           {/* Description */}
           <p className="pr-5 max-w-xl mb-5 text-base text-gray-700 dark:text-gray-300 md:text-lg">
-            Vous souhaitez offrir à vos gestionnaires ou à vos employés les conditions idéales pour se développer, résoudre des situations complexes et contribuer à la réussite de votre organisation?
+            Vous voulez offrir à vos gestionnaires ou à vos employés les meilleures conditions pour se développer, résoudre des défis complexes et contribuer au succès de votre organisation ?
           </p>
 
           {/* Boutons d'action */}

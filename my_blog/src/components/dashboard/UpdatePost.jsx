@@ -50,7 +50,7 @@ export default function UpdatePost() {
   const handleUpdloadImage = async () => {
     try {
       if (!file) {
-        setImageUploadError('Please select an image');
+        setImageUploadError('Veuillez sélectionner une image');
         return;
       }
       setImageUploadError(null);
@@ -66,7 +66,7 @@ export default function UpdatePost() {
           setImageUploadProgress(progress.toFixed(0));
         },
         (error) => {
-          setImageUploadError('Image upload failed');
+          setImageUploadError('Échec du téléchargement de l\'image');
           setImageUploadProgress(null);
         },
         () => {
@@ -78,7 +78,7 @@ export default function UpdatePost() {
         }
       );
     } catch (error) {
-      setImageUploadError('Image upload failed');
+      setImageUploadError('Échec du téléchargement de l\'image');
       setImageUploadProgress(null);
       console.log(error);
     }
@@ -104,17 +104,17 @@ export default function UpdatePost() {
         navigate(`/post/${data.slug}`);
       }
     } catch (error) {
-      setPublishError('Something went wrong');
+      setPublishError('Une erreur est survenue');
     }
   };
   return (
     <div className='p-3 pt-20 max-w-3xl mx-auto min-h-screen'>
-      <h1 className='text-center text-3xl my-7 font-semibold'>Update post</h1>
+      <h1 className='text-center text-3xl my-7 font-semibold'>Mettre à jour le poste</h1>
       <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
         <div className='flex flex-col gap-4 sm:flex-row justify-between'>
           <TextInput
             type='text'
-            placeholder='Title'
+            placeholder='Titre'
             required
             id='title'
             className='flex-1'
@@ -129,7 +129,7 @@ export default function UpdatePost() {
             }
             value={formData.category}
           >
-            <option value='uncategorized'>Select a category</option>
+            <option value='uncategorized'>Sélectionner une catégorie</option>
             <option value='javascript'>JavaScript</option>
             <option value='reactjs'>React.js</option>
             <option value='nextjs'>Next.js</option>
@@ -157,7 +157,7 @@ export default function UpdatePost() {
                 />
               </div>
             ) : (
-              'Upload Image'
+              'Télécharger l\'image'
             )}
           </Button>
         </div>
@@ -169,10 +169,11 @@ export default function UpdatePost() {
             className='w-full h-72 object-cover'
           />
         )}
+       
         <ReactQuill
           theme='snow'
           value={formData.content}
-          placeholder='Write something...'
+          placeholder='Écrivez quelque chose...'
           className='h-72 mb-12'
           required
           onChange={(value) => {
@@ -180,7 +181,7 @@ export default function UpdatePost() {
           }}
         />
         <Button type='submit' gradientDuoTone='purpleToPink'>
-          Update post
+          Mettre à jour le poste
         </Button>
         {publishError && (
           <Alert className='mt-5' color='failure'>

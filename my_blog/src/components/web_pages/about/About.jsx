@@ -1,16 +1,9 @@
-import React from 'react'
-// import HeroAbout from './HeroAbout'
-// import Statistic4 from '../home/Statistic4'
-// import CTA10 from './CTA1'
+import React from 'react';
 
 export default function About() {
   return (
     <div>
-
-
       {/* <HeroAbout /> */}
-
-
 
       <section className="bg-white dark:bg-gray-900">
         {/* Container */}
@@ -19,15 +12,15 @@ export default function About() {
           <div className="flex flex-col gap-8 lg:flex-row lg:gap-10">
             {/* Content */}
             <div className="flex flex-col gap-6 lg:w-3/5">
-              <h2 className="mb-0 text-3xl font-bold md:text-5xl dark:text-white">About us</h2>
+              <h2 className="mb-0 text-3xl font-bold md:text-5xl dark:text-white">À propos de nous</h2>
               <p className="text-sm sm:text-base dark:text-gray-300">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin fermentum leo vel orci. Dui faucibus in ornare quam viverra orci sagittis eu. Viverra nam libero justo laoreet sit amet. Vulputate odio ut enim blandit volutpat maecenas volutpat blandit. A lacus vestibulum sed arcu non odio euismod. Feugiat pretium nibh ipsum consequat. Cum sociis natoque penatibus et. Leo in vitae turpis massa sed. Neque aliquam vestibulum morbi blandit cursus. Facilisis sed odio morbi quis. A pellentesque sit amet porttitor eget.
+                Nous sommes passionnés par l'accompagnement et le coaching pour vous aider à atteindre vos objectifs. Notre équipe d'experts met tout en œuvre pour vous offrir des solutions adaptées à vos besoins spécifiques, avec des conseils personnalisés et une approche basée sur l'expérience.
               </p>
               <a
                 href="#"
-                className="w-36 rounded-md bg-black px-6 py-3 text-center font-semibold text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+                className="max-w-52 rounded-md bg-black px-3 py-2 text-center font-semibold text-white dark:bg-gray-800 dark:hover:bg-gray-700"
               >
-                Learn More
+                En savoir plus
               </a>
               {/* Divider */}
               <div className="my-8 h-px w-full bg-black dark:bg-gray-600"></div>
@@ -35,13 +28,13 @@ export default function About() {
               <div className="grid gap-8 md:grid-cols-2 md:gap-4">
                 <div className="flex flex-col gap-4 rounded-md border border-solid bg-gray-100 dark:bg-gray-800 dark:border-gray-700 p-6 md:p-4">
                   <p className="text-sm dark:text-gray-300">
-                    I have been using the Business Solution services for the past year, and I am extremely satisfied with the results. Their innovative solutions and expertise have transformed my business operations.
+                    J'utilise les services de coaching depuis un an et je suis extrêmement satisfait des résultats. Leurs solutions innovantes et leur expertise ont transformé mes opérations.
                   </p>
                   <div className="flex items-center gap-2 sm:gap-x-4">
                     <div className="flex items-center gap-x-2">
                       <img
                         src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-                        alt=""
+                        alt="Témoignage"
                         className="h-12 w-12 rounded-full object-cover"
                       />
                       <p className="text-sm font-semibold sm:text-base dark:text-gray-100">
@@ -74,17 +67,17 @@ export default function About() {
                 {/* Repeat for other testimonials */}
                 <div className="flex flex-col gap-4 rounded-md border border-solid bg-gray-100 dark:bg-gray-800 dark:border-gray-700 p-6 md:p-4">
                   <p className="text-sm dark:text-gray-300">
-                    I have been using the Business Solution services for the past year, and I am extremely satisfied with the results. Their innovative solutions and expertise have transformed my business operations.
+                    Leur service de coaching a vraiment fait une différence dans mon développement personnel. Les conseils étaient clairs et les résultats ont été au-delà de mes attentes.
                   </p>
                   <div className="flex items-center gap-2 sm:gap-x-4">
                     <div className="flex items-center gap-x-2">
                       <img
                         src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-                        alt=""
+                        alt="Témoignage"
                         className="h-12 w-12 rounded-full object-cover"
                       />
                       <p className="text-sm font-semibold sm:text-base dark:text-gray-100">
-                        Alleyah
+                        Alex
                       </p>
                     </div>
                     {/* Divider */}
@@ -114,16 +107,15 @@ export default function About() {
             </div>
             {/* Image */}
             <div className="w-full rounded-md bg-gray-100 dark:bg-gray-800 max-[991px]:h-[475px] lg:w-2/5">
-              <img src='https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80' alt=''
-                className='w-full h-full object-cover object-right-top' />
+              <img
+                src='https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
+                alt='Image à propos'
+                className='w-full h-full object-cover object-right-top'
+              />
             </div>
           </div>
         </div>
       </section>
-
-
-      {/* <Statistic4 /> */}
-      {/* <CTA10 /> */}
     </div>
-  )
+  );
 }

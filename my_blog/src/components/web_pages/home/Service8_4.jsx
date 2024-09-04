@@ -8,7 +8,7 @@ const Service8_2 = ({ voirEtaps, setVoirEtaps }) => {
                     <div data-aos="fade-up" className="border-4 w-full lg:w-[100%]">
                         <img
                             src="https://www.lecoindesentrepreneurs.fr/wp-content/uploads/2015/07/Comprendre-et-analyser-un-compte-de-r%C3%A9sultat.png"
-                            alt="Photography Service"
+                            alt="Session bilan"
                             className="w-full drop-shadow-[2px_10px_6px_rgba(0,0,0,0.50)]"
                         />
                     </div>
@@ -24,10 +24,10 @@ const Service8_2 = ({ voirEtaps, setVoirEtaps }) => {
                                     <h1 className="text-xl sm:text-3xl font-bold dark:text-white">Session bilan</h1>
                                 </div>
                             </div>
-                            <p data-aos="fade-up" className="dark:text-white   text-gray-600 tracking-wide">
-                                Il s'agit d'un échange interactif qui permet de rassembler des informations sur le contexte organisationnel, les attentes et les objectifs à atteindre. Cette séance initiale permet au coaché de verbaliser les problématiques rencontrées et ses objectifs.
+                            <p data-aos="fade-up" className="dark:text-white text-gray-600 tracking-wide">
+                                La session bilan est un moment clé pour faire le point sur les progrès réalisés, discuter des défis rencontrés et ajuster les stratégies si nécessaire. C’est l’occasion de valider les résultats obtenus par rapport aux objectifs initiaux et de planifier les prochaines étapes si besoin.
                                 <br /><br />
-                                Le but est d'obtenir des informations afin de mieux conseiller le coaché et de le guider vers des pistes de solutions auxquelles il n’avait pas pensé.
+                                Cette étape permet au coaché et au coach de s'assurer que les objectifs sont atteints et de déterminer les actions futures pour maintenir la progression.
                             </p>
 
                             {/* <button data-aos="fade-up" className="bg-sky-600 text-white px-10 py-3 font-bold">

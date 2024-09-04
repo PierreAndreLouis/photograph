@@ -85,9 +85,6 @@ export default function DashComments() {
     }
   };
 
-
-
-
   const formatDate = (dateString) => {
     const options = { day: '2-digit', month: '2-digit', year: '2-digit' };
     const date = new Date(dateString);
@@ -100,20 +97,19 @@ export default function DashComments() {
         <>
           <Table hoverable className='shadow-md'>
             <Table.Head>
-              <Table.HeadCell>Date Updated</Table.HeadCell>
+              <Table.HeadCell>Date de mise à jour</Table.HeadCell>
               <Table.HeadCell>Profil</Table.HeadCell>
-              <Table.HeadCell>Username</Table.HeadCell>
-              <Table.HeadCell>Comment Content</Table.HeadCell>
-              <Table.HeadCell>Number of Likes</Table.HeadCell>
-              <Table.HeadCell>Delete</Table.HeadCell>
+              <Table.HeadCell>Nom d'utilisateur</Table.HeadCell>
+              <Table.HeadCell>Contenu du commentaire</Table.HeadCell>
+              <Table.HeadCell>Nombre de j'aime</Table.HeadCell>
+              <Table.HeadCell>Supprimer</Table.HeadCell>
             </Table.Head>
             {comments.map((comment) => (
               <Table.Body className='divide-y' key={comment._id}>
                 <Table.Row className='bg-white dark:border-gray-700 dark:bg-gray-800'>
-                    <Table.Cell>
-                    {/* {new Date(comment.updatedAt).toLocaleDateString()} */}
+                  <Table.Cell>
                     {formatDate(comment.updatedAt)}
-                    </Table.Cell>
+                  </Table.Cell>
                   <Table.Cell>
                     <img
                       src={comment.profilePicture}
@@ -132,7 +128,7 @@ export default function DashComments() {
                       }}
                       className='font-medium text-red-500 hover:underline cursor-pointer'
                     >
-                      Delete
+                      Supprimer
                     </span>
                   </Table.Cell>
                 </Table.Row>
@@ -144,12 +140,12 @@ export default function DashComments() {
               onClick={handleShowMore}
               className='w-full text-teal-500 self-center text-sm py-7'
             >
-              Show more
+              Afficher plus
             </button>
           )}
         </>
       ) : (
-        <p>You have no comments yet!</p>
+        <p>Chargement...</p>
       )}
       <Modal
         show={showModal}
@@ -162,14 +158,14 @@ export default function DashComments() {
           <div className='text-center'>
             <HiOutlineExclamationCircle className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto' />
             <h3 className='mb-5 text-lg text-gray-500 dark:text-gray-400'>
-              Are you sure you want to delete this comment?
+              Êtes-vous sûr de vouloir supprimer ce commentaire ?
             </h3>
             <div className='flex justify-center gap-4'>
               <Button color='failure' onClick={handleDeleteComment}>
-                Yes, I'm sure
+                Oui, je suis sûr
               </Button>
               <Button color='gray' onClick={() => setShowModal(false)}>
-                No, cancel
+                Non, annuler
               </Button>
             </div>
           </div>

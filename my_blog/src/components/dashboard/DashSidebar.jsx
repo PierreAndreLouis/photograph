@@ -53,7 +53,7 @@ export default function DashSidebar({ setsideBar }) {
                 icon={HiChartPie}
                 as='div'
               >
-                Dashboard
+                Tableau de bord
               </Sidebar.Item>
             </Link>
           )}
@@ -61,11 +61,11 @@ export default function DashSidebar({ setsideBar }) {
             <Sidebar.Item
               active={tab === 'profile'}
               icon={HiUser}
-              label={currentUser.isAdmin ? 'Admin' : 'User'}
+              label={currentUser.isAdmin ? 'Admin' : 'Utilisateur'}
               labelColor='dark'
               as='div'
             >
-              Profile
+              Profil
             </Sidebar.Item>
           </Link>
 
@@ -78,7 +78,7 @@ export default function DashSidebar({ setsideBar }) {
                 labelColor='dark'
                 as='div'
               >
-                Create a post
+                Créer un post
               </Sidebar.Item>
             </Link>
           )}
@@ -103,7 +103,7 @@ export default function DashSidebar({ setsideBar }) {
                   icon={HiOutlineUserGroup}
                   as='div'
                 >
-                  Users
+                  Utilisateurs
                 </Sidebar.Item>
               </Link>
               <Link to='/dashboard?tab=comments'>
@@ -112,7 +112,7 @@ export default function DashSidebar({ setsideBar }) {
                   icon={HiAnnotation}
                   as='div'
                 >
-                  Comments
+                  Commentaires
                 </Sidebar.Item>
               </Link>
             </>
@@ -122,7 +122,7 @@ export default function DashSidebar({ setsideBar }) {
             className='cursor-pointer'
             onClick={handleSignout}
           >
-            Sign Out
+            Se déconnecter
           </Sidebar.Item>
         </Sidebar.ItemGroup>
       </Sidebar.Items>

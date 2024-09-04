@@ -6,17 +6,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 export default function Side_bar_blog({ setLoading, setShowMore }) {
     const [recentPosts, setRecentPosts] = useState(null);
 
@@ -162,7 +151,7 @@ export default function Side_bar_blog({ setLoading, setShowMore }) {
                     {/* Search Section */}
                     <form onSubmit={handleSubmit} className='grid gap-4'>
                         <TextInput
-                            placeholder='Search...'
+                            placeholder='Recherche...'
                             id='searchTerm'
                             type='text'
                             value={sidebarData.searchTerm}
@@ -170,7 +159,7 @@ export default function Side_bar_blog({ setLoading, setShowMore }) {
                         />
                         <div className=' grid grid-cols-2 gap-4'>
                             <div className='grid gap-2 items-center'>
-                                <label className='font-semibold'>Sort:</label>
+                                <label className='font-semibold'>Trier :</label>
                             </div>
                             <div className='grid gap-2 items-center'>
 
@@ -179,7 +168,7 @@ export default function Side_bar_blog({ setLoading, setShowMore }) {
                                     value={sidebarData.category}
                                     id='category'
                                 >
-                                    <option value='uncategorized'>Uncategorized</option>
+                                    <option value='uncategorized'>Non classé</option>
                                     <option value='reactjs'>React.js</option>
                                     <option value='nextjs'>Next.js</option>
                                     <option value='javascript'>JavaScript</option>
@@ -187,7 +176,7 @@ export default function Side_bar_blog({ setLoading, setShowMore }) {
                             </div>
                         </div>
                         <Button type='submit' outline gradientDuoTone='purpleToPink'>
-                            Apply Filters
+                            Appliquer les filtres
                         </Button>
                     </form>
 
@@ -220,7 +209,7 @@ export default function Side_bar_blog({ setLoading, setShowMore }) {
                                 />
                             </svg>
                             <h3 className="text-2xl pt-6 w-full font-bold text-white text-center">
-                                Join our beta program for more features
+                                Rejoignez notre programme bêta pour plus de fonctionnalités
                             </h3>
                             <form
                                 action="https://gmail.us17.list-manage.com/subscribe/post?u=fe0c8c450e6899f0d6f68376c&amp;id=a07b274bde&amp;f_id=00d255e0f0"
@@ -267,36 +256,6 @@ export default function Side_bar_blog({ setLoading, setShowMore }) {
 
 
 
-                {/* <div id="mc_embed_signup">
-                    <form
-                        action="https://gmail.us17.list-manage.com/subscribe/post?u=fe0c8c450e6899f0d6f68376c&amp;id=a07b274bde&amp;f_id=00d255e0f0"
-                        method="post"
-                        id="mc-embedded-subscribe-form"
-                        name="mc-embedded-subscribe-form"
-                        className="validate"
-                        target="_blank"
-                    >
-                        <div>
-                            <input
-                                type="email"
-                                name="EMAIL"
-                                className="required email"
-                                id="mce-EMAIL"
-                                placeholder="Entrez votre email"
-                                required
-                            />
-                            <button
-                                type="submit"
-                                name="subscribe"
-                                id="mc-embedded-subscribe"
-                                className="button"
-                            >
-                                S'abonner
-                            </button>
-                        </div>
-                    </form>
-                </div> */}
-
 
 
                 <div className='px-4 mt-4'>
@@ -306,7 +265,7 @@ export default function Side_bar_blog({ setLoading, setShowMore }) {
                             className='border-b border-b-gray-300 py-3 cursor-pointer hover:bg-gray-200 hover:pl-4 transition-all'
                             onClick={() => handleCategoryClick('uncategorized')}
                         >
-                            uncategorized
+                            Non classé
                         </p>
                         <p
                             className='border-b border-b-gray-300 py-3 cursor-pointer hover:bg-gray-200 hover:pl-4 transition-all'
@@ -332,7 +291,7 @@ export default function Side_bar_blog({ setLoading, setShowMore }) {
 
 
                 <div className='mt-14 mx-4  grid gap-3'>
-                    <h2 className='font-semibold pb-2 text-xl mb-4 border-b-gray-400 border-b-2'>RECENT POST</h2>
+                    <h2 className='font-semibold pb-2 text-xl mb-4 border-b-gray-400 border-b-2'>Articles récents</h2>
 
 
                     {recentPosts && recentPosts.map((post) => (

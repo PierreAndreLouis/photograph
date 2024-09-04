@@ -2,11 +2,11 @@ export default function Footer3() {
 
     const footerNavs = [
         {
-            label: "Resources",
+            label: "Ressources",
             items: [
                 {
                     href: 'javascript:void()',
-                    name: 'contact'
+                    name: 'Contact'
                 },
                 {
                     href: 'javascript:void()',
@@ -18,45 +18,45 @@ export default function Footer3() {
                 },
                 {
                     href: 'javascript:void()',
-                    name: 'Pricing'
+                    name: 'Tarifs'
                 },
             ],
         },
         {
-            label: "About",
+            label: "À propos",
             items: [
                 {
                     href: 'javascript:void()',
-                    name: 'Terms'
+                    name: 'Conditions'
                 },
                 {
                     href: 'javascript:void()',
-                    name: 'License'
+                    name: 'Licence'
                 },
                 {
                     href: 'javascript:void()',
-                    name: 'Privacy'
+                    name: 'Confidentialité'
                 },
                 {
                     href: 'javascript:void()',
-                    name: 'About US'
+                    name: 'À propos de nous'
                 },
             ]
         },
         {
-            label: "Explore",
+            label: "Explorer",
             items: [
                 {
                     href: 'javascript:void()',
-                    name: 'Showcase'
+                    name: 'Vitrine'
                 },
                 {
                     href: 'javascript:void()',
-                    name: 'Roadmap'
+                    name: 'Feuille de route'
                 },
                 {
                     href: 'javascript:void()',
-                    name: 'Languages'
+                    name: 'Langues'
                 },
                 {
                     href: 'javascript:void()',
@@ -65,23 +65,24 @@ export default function Footer3() {
             ]
         },
         {
-            label: "Company",
+            label: "Entreprise",
             items: [
                 {
                     href: 'javascript:void()',
-                    name: 'Partners'
+                    name: 'Partenaires'
                 },
                 {
                     href: 'javascript:void()',
-                    name: 'Team'
+                    name: 'Équipe'
                 },
                 {
                     href: 'javascript:void()',
-                    name: 'Careers'
+                    name: 'Carrières'
                 },
             ],
         }
-    ]
+    ];
+
 
     return (
         <footer className="pt-10 bg-gray-800 dark:bg-gray-800">
@@ -89,7 +90,7 @@ export default function Footer3() {
                 <div className="justify-between items-center gap-12 md:flex">
                     <div className="flex-1 max-w-lg">
                         <h3 className="text-white text-2xl font-bold">
-                            Get our beautiful newsletter straight to your inbox.
+                            Rejoignez Notre Communauté de Coaching
                         </h3>
                     </div>
                     <div id="mc_embed_signup" className="flex-1 mt-6 md:mt-0">

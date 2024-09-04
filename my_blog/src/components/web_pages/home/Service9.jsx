@@ -48,7 +48,7 @@ function Service9() {
                                 <RiTeamFill className='text-white text-5xl'/>
                             </div>
                             <h3 className="text-2xl font-bold mb-2 text-gray-800 dark:text-gray-200">{service.title}</h3>
-                            <p className="text-md font-sans text-gray-600 dark:text-gray-400 mb-4">
+                            <p className="text-[1rem] font-sans text-gray-600 dark:text-gray-400 mb-4">
                                 {service.description}
                             </p>
                         </div>

@@ -14,13 +14,15 @@ export default function SignIn() {
   const { loading, error: errorMessage } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.email || !formData.password) {
-      return dispatch(signInFailure('Please fill all the fields'));
+      return dispatch(signInFailure('Veuillez remplir tous les champs'));
     }
     try {
       dispatch(signInStart());
@@ -33,7 +35,6 @@ export default function SignIn() {
       if (data.success === false) {
         dispatch(signInFailure(data.message));
       }
-
       if (res.ok) {
         dispatch(signInSuccess(data));
         navigate('/');
@@ -42,10 +43,11 @@ export default function SignIn() {
       dispatch(signInFailure(error.message));
     }
   };
+
   return (
     <div className='min-h-screen flex justify-center items-center'>
-      <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row  gap-10 '>
-        {/* left */}
+      <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row gap-10'>
+        {/* Gauche */}
         <div className='flex-1'>
           <Link to='/' className='font-bold dark:text-white text-4xl'>
             <span className='px-2 py-1 text-sky-500 rounded-lg'>
@@ -54,25 +56,23 @@ export default function SignIn() {
             Blog
           </Link>
           <p className='text-sm mt-5'>
-            This is a demo project. You can sign in with your email and password
-            or with Google.
+            Il s'agit d'un projet de démonstration. Vous pouvez vous connecter avec votre e-mail et votre mot de passe ou avec Google.
           </p>
         </div>
-        {/* right */}
-
+        {/* Droite */}
         <div className='flex-1'>
           <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
             <div>
-              <Label value='Your email' />
+              <Label value='Votre e-mail' />
               <TextInput
                 type='email'
-                placeholder='name@company.com'
+                placeholder='nom@entreprise.com'
                 id='email'
                 onChange={handleChange}
               />
             </div>
             <div>
-              <Label value='Your password' />
+              <Label value='Votre mot de passe' />
               <TextInput
                 type='password'
                 placeholder='**********'
@@ -80,25 +80,25 @@ export default function SignIn() {
                 onChange={handleChange}
               />
             </div>
-            <button className='py-2 mt-6 rounded-md bg-sky-500'
+            <button className='py-2 mt-6 rounded-md bg-sky-500 text-white'
               type='submit'
               disabled={loading}
             >
               {loading ? (
                 <>
                   <Spinner size='sm' />
-                  <span className='pl-3'>Loading...</span>
+                  <span className='pl-3'>Chargement...</span>
                 </>
               ) : (
-                'Sign In'
+                'Se connecter'
               )}
             </button>
             <OAuth />
           </form>
           <div className='flex gap-2 text-sm mt-5'>
-            <span>Dont Have an account?</span>
+            <span>Vous n'avez pas de compte ?</span>
             <Link to='/sign-up' className='text-blue-500'>
-              Sign Up
+              Inscrivez-vous
             </Link>
           </div>
           {errorMessage && (
