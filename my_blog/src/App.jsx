@@ -4,7 +4,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 // Importation des pages Web
-import Home from './components/web_pages/home/HomePage';
+import Home from './components/web_pages/home/homePage';
 import Search from './components/web_pages/search/Search';
 import About from './components/web_pages/about/About_page';
 import Contact_page from './components/web_pages/contact/Contact_page';

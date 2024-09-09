@@ -17,7 +17,7 @@ import Contact3 from './Contact3'
 
 
 
-export default function HomePage() {
+export default function homePage() {
     return (
         <div>
             <Hero5 />
