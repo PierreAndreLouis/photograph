@@ -6,7 +6,7 @@ import { Button, Spinner } from 'flowbite-react';
 import { Link, useParams } from 'react-router-dom';
 import CommentSection from './CommentSection';
 import Side_bar_blog from './Side_bar_blog';
-import Footer3 from '../home/Footer3';
+// import Footer3 from '../home/Footer3';
 
 export default function BlogDetails() {
     const { postSlug } = useParams();

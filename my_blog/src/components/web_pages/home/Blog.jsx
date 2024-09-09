@@ -51,8 +51,18 @@ export default function Blog() {
                       className=" line-clamp-2 mb-2 text-xl font-black leading-tight hover:underline hover:text-sky-600 dark:hover:text-sky-400">
                       {post.title}
                     </h3>
-                    <p className="mb-4 line-clamp-4 text-gray-600 leading-5 text-sm dark:text-gray-300">
-                      Découvrez des conseils essentiels pour créer un plan marketing réussi qui génère des résultats et stimule la croissance de votre entreprise.
+                    <style>
+                      {`
+                                                .post_content a {
+                                                // color: #494949;
+                                                background: none !important;
+                                                }
+                                            `}
+                    </style>
+                    <p
+                      className='post_content text-md line-clamp-3'
+                      dangerouslySetInnerHTML={{ __html: post && post.content }}
+                    >
                     </p>
                     <a href="#"
                       className="inline-block pb-1 text-base font-black text-sky-600 dark:text-sky-400 uppercase border-b border-transparent hover:border-sky-600 dark:hover:border-sky-400">
@@ -68,7 +78,7 @@ export default function Blog() {
 
 
 
-     
+
 
 
 

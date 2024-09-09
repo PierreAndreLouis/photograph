@@ -100,7 +100,7 @@ export default function Header() {
         ) : (
           <Link to='/sign-in'>
             <button className='px-3 py-1 rounded-lg bg-sky-500 text-gray-100'>
-              Se connecter
+              Login
             </button>
           </Link>
         )}

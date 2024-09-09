@@ -24,7 +24,7 @@ export default function Statistic4() {
             <div className="max-w-screen-xl mx-auto px-4 text-gray-600 dark:text-gray-300 gap-12 items-start justify-between flex flex-col-reverse lg:flex-row md:px-8">
                 <div className="lg:max-w-xl">
                     <img
-                        src="https://images.unsplash.com/photo-1622675363311-3e1904dc1885?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                        src="https://www.69dropsstudio.co.uk/wp-content/uploads/2016/11/benefits-of-photography.jpg.webp"
                         className="rounded-lg"
                         alt="Pourquoi choisir nos services"
                     />

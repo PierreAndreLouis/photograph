@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 export default function Product({ grid }) {
     return (
         <div className='mx-4 pb-10'>
-            <div className={`md:grid ${grid ? 'md:grid-cols-2 my-20' : ""} bg-sky-50 dark:bg-gray-800 py-16 px-4 max-w-5xl mx-auto rounded-md overflow-hidden shadow-md`}>
+            <div className={`md:grid ${grid ? 'md:grid-cols-2 my-20' : ""} bg-sky-50  dark:bg-gray-800 pt-16 pb-16 px-4 max-w-6xl mx-auto rounded-md overflow-hidden shadow-md`}>
                 <div className="relative">
                     <img
-                        className="w-full max-h-[20rem] h-full object-cover rounded-md"
-                        src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+                        className="w-full max-h-[25rem] h-full object-cover rounded-md"
+                        src="https://static.vecteezy.com/system/resources/previews/022/334/268/large_2x/camera-worldgraphy-day-the-beauty-of-an-image-photo.jpeg"
                         alt="Produit phare"
                     />
                     <div className="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 m-2 rounded-md text-sm font-medium">
