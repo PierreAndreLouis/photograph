@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 export default function HomeSeo() {
@@ -7,46 +7,47 @@ export default function HomeSeo() {
             {/* Helmet pour les balises SEO */}
             <Helmet>
                 {/* Titre de la page */}
-                <title>Accueil - Pierre-André Louis | Coaching Professionnel</title>
+                <title>Accueil - Pierre-André Louis | Services de Marketing Digital</title>
 
                 {/* Meta Description */}
                 <meta
                     name="description"
-                    content="Explorez nos services de coaching professionnel pour booster votre carrière. Pierre-André Louis vous accompagne dans votre développement personnel et professionnel avec des stratégies sur mesure."
+                    content="Découvrez nos services de marketing digital, incluant la création de sites web optimisés, le SEO, et la gestion de campagnes publicitaires. Boostez votre présence en ligne avec des solutions sur mesure."
                 />
 
                 {/* Mots-clés SEO */}
-                <meta name="keywords" content="coaching professionnel, développement personnel, coaching de carrière, mentorat, gestion de carrière, coaching en ligne" />
+                <meta name="keywords" content="marketing digital, création site web, SEO, publicité en ligne, gestion de campagnes, design UX, optimisation site web" />
 
                 {/* Open Graph Tags */}
-                <meta property="og:title" content="Accueil - Pierre-André Louis | Coaching Professionnel" />
-                <meta property="og:description" content="Explorez nos services de coaching professionnel pour booster votre carrière." />
-                <meta property="og:image" content="https://mon-site.com/images/coaching-home-page.jpg" /> {/* Assure-toi de remplacer par une URL d'image appropriée */}
+                <meta property="og:title" content="Accueil - Pierre-André Louis | Services de Marketing Digital" />
+                <meta property="og:description" content="Découvrez nos services de marketing digital pour améliorer votre visibilité en ligne avec des solutions personnalisées." />
+                <meta property="og:image" content="https://mon-site.com/images/marketing-home-page.jpg" /> {/* Remplace avec une URL d'image appropriée */}
 
                 <meta property="og:url" content="https://mon-site.com" />
                 <meta property="og:type" content="website" />
 
                 {/* Twitter Card Tags */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Accueil - Pierre-André Louis | Coaching Professionnel" />
-                <meta name="twitter:description" content="Explorez nos services de coaching professionnel pour booster votre carrière." />
-                <meta name="twitter:image" content="https://mon-site.com/images/coaching-home-page.jpg" />
+                <meta name="twitter:title" content="Accueil - Pierre-André Louis | Services de Marketing Digital" />
+                <meta name="twitter:description" content="Boostez votre présence en ligne avec nos services de marketing digital. Découvrez comment nous pouvons vous aider à atteindre vos objectifs." />
+                <meta name="twitter:image" content="https://mon-site.com/images/marketing-home-page.jpg" />
 
                 {/* JSON-LD pour le SEO structuré */}
                 <script type="application/ld+json">
                     {`
-            {
-              "@context": "http://schema.org",
-              "@type": "WebSite",
-              "name": "Pierre-André Louis",
-              "url": "https://mon-site.com",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://mon-site.com/search?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-              }
-            }
-          `}
+                    {
+                      "@context": "http://schema.org",
+                      "@type": "WebSite",
+                      "name": "Pierre-André Louis Marketing Digital",
+                      "url": "https://mon-site.com",
+                      "description": "Pierre-André Louis propose des services de marketing digital pour aider les entreprises à améliorer leur visibilité en ligne avec des solutions sur mesure.",
+                      "potentialAction": {
+                        "@type": "SearchAction",
+                        "target": "https://mon-site.com/search?q={search_term_string}",
+                        "query-input": "required name=search_term_string"
+                      }
+                    }
+                    `}
                 </script>
 
                 <meta name="google-site-verification" content="N-zeL1g6i8H01BkSrgIW_lM7MYrYGG3lVzsGMGvSq4o" />
@@ -64,5 +65,5 @@ export default function HomeSeo() {
                 </script>
             </Helmet>
         </div>
-    )
+    );
 }

@@ -117,9 +117,9 @@ export default function BlogDetails() {
                 </div>
             </div>
 
-            <div className='pt-32'>
-                <Footer3 />
-            </div>
+            {/* <div className='pt-32'> */}
+                {/* <Footer3 /> */}
+            {/* </div> */}
 
         </div>
 
