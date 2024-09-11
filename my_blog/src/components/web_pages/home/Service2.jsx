@@ -24,7 +24,7 @@ export default function Service2() {
         <div className="bg-indigo-50 dark:bg-gray-900 text-slate-900 dark:text-slate-200 py-10">
             <div className="max-w-7xl mx-auto py-8 px-4 lg:py-16 lg:px-6">
                 <div className="text-center mb-10">
-                    <h2 className="text-4xl tracking-tight font-bold text-primary-800 dark:text-primary-400">
+                    <h2 className="text-4xl tracking-tight font-bold text-gray-700 dark:text-gray-100">
                         Pourquoi nous choisir ?
                     </h2>
                     <p className='dark:text-gray-400 mt-3'>Voici les raisons pour lesquelles nous sommes votre meilleur choix pour réussir.</p>

@@ -73,7 +73,7 @@ const Gallery5 = () => {
     return (
         <div className='bg-slate-100 dark:bg-gray-900 py-10'>
             <div className=''>
-                <h2 className="text-gray-700 dark:text-gray-400 text-3xl font-bold text-center sm:text-5xl">Découvrez Nos Réalisations</h2>
+                <h2 className="text-gray-600 dark:text-gray-400 text-3xl font-bold text-center sm:text-4xl">Découvrez Nos Réalisations</h2>
                 <p className="max-w-3xl mx-auto mt-2 text-lg dark:text-gray-500 text-center">
                     Explorez les projets réussis qui témoignent de notre expertise et créativité.                </p>
             </div>

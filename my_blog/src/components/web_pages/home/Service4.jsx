@@ -105,8 +105,8 @@ const Service4 = () => {
     <section className="bg-white dark:bg-gray-900 text-slate-900 dark:text-slate-200 py-10">
       <div className="container max-w-xl p-6 mx-auto space-y-12 lg:px-8 lg:max-w-7xl">
         <div>
-          <h2 className="text-3xl text-gray-800 dark:text-gray-300 font-bold text-center sm:text-5xl">Ce que vous recevrez de nous</h2>
-          <p className="max-w-3xl text-gray-600 dark:text-gray-400 mx-auto mt-4 text-md text-center">
+          <h2 className="text-2xl text-gray-700 dark:text-gray-300 font-bold text-center sm:text-4xl">Ce que vous recevrez de nous</h2>
+          <p className="max-w-3xl text-gray-600 dark:text-gray-400 mx-auto mt-2 text-md text-center">
             Découvrez les avantages que nous offrons pour maximiser vos résultats.          </p>
         </div>
         <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">

@@ -89,7 +89,7 @@ const Testimonial9 = () => {
     };
 
     return (
-        <div className="py-10 dark:bg-gray-900 bg-indigo-50">
+        <div className="py-40 dark:bg-gray-900 bg-indigo-50">
             <div className="container mx-auto max-w-6xl">
                 <div className="text-center mb-10 max-w-[600px] mx-auto">
                     <p data-aos="fade-up" className="text-sm text-gray-500 dark:text-gray-400">
@@ -110,7 +110,7 @@ const Testimonial9 = () => {
                             <div className="my-6 " key={data.id}>
                                 <div className="flex flex-col bg-white gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl dark:bg-gray-800 bg-primary/10 relative">
                                     <div className="mb-4">
-                                        <img src={data.img} alt="" className="rounded-full w-20 h-20" />
+                                        <img src={data.img} alt="" className="rounded-full w-20 h-20 border" />
                                     </div>
                                     <div className="flex flex-col items-center gap-4">
                                         <div className="space-y-3">

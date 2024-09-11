@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Pricing4 = () => {
     const [isAnnual, setIsAnnual] = useState(true);
@@ -43,9 +44,9 @@ const Pricing4 = () => {
                                         <span className="text-slate-500 font-medium">/mo</span>
                                     </div>
                                     <div className="text-sm text-slate-500 mb-5">There are many variations available, but the majority have suffered.</div>
-                                    <a className="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-indigo-500 px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
+                                    <Link to="/reservation" className="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-indigo-500 px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
                                         Purchase Plan
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="text-slate-900 dark:text-slate-200 font-medium mb-3">Includes:</div>
                                 <ul className="text-slate-600 dark:text-slate-400 text-sm space-y-3 grow">
@@ -75,9 +76,9 @@ const Pricing4 = () => {
                                         <span className="text-slate-500 font-medium">/mo</span>
                                     </div>
                                     <div className="text-sm text-slate-500 mb-5">There are many variations available, but the majority have suffered.</div>
-                                    <a className="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-indigo-500 px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
+                                    <Link to="/reservation" className="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-indigo-500 px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
                                         Purchase Plan
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="text-slate-900 dark:text-slate-200 font-medium mb-3">Includes:</div>
                                 <ul className="text-slate-600 dark:text-slate-400 text-sm space-y-3 grow">
@@ -104,9 +105,9 @@ const Pricing4 = () => {
                                         <span className="text-slate-500 font-medium">/mo</span>
                                     </div>
                                     <div className="text-sm text-slate-500 mb-5">There are many variations available, but the majority have suffered.</div>
-                                    <a className="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-indigo-500 px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
+                                    <Link to="/reservation" className="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-indigo-500 px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
                                         Purchase Plan
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="text-slate-900 dark:text-slate-200 font-medium mb-3">Includes:</div>
                                 <ul className="text-slate-600 dark:text-slate-400 text-sm space-y-3 grow">

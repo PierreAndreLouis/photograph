@@ -21,7 +21,7 @@ const CTA3 = () => {
           <h2 className="mb-6 font-sans text-3xl text-center font-bold tracking-tight text-white dark:text-gray-100 sm:text-4xl sm:leading-none">
             Abonnez-vous à Notre Newsletter
           </h2>
-          <p className="mb-6 text-base text-indigo-200 dark:text-indigo-300 md:text-lg">
+          <p className="mb-6 text-base text-center text-indigo-200 dark:text-indigo-300 md:text-lg">
             Inscrivez-vous à notre newsletter pour obtenir des conseils pratiques, des actualités du secteur, et des informations exclusives directement dans votre boîte mail, afin de rester à la pointe des tendances et d’optimiser vos stratégies marketing.
           </p>
           <form className="flex flex-col items-center w-full mb-4 md:flex-row md:px-16">

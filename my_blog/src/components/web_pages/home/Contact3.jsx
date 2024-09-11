@@ -89,7 +89,7 @@ const Contact3 = () => {
                 </div>
                 <button
                   type="button"
-                  className="mb-6 w-full rounded bg-sky-500 text-white px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal lg:mb-0 dark:bg-sky-600 dark:hover:bg-sky-700"
+                  className="mb-6 w-full rounded bg-indigo-500 text-white px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal lg:mb-0 dark:bg-indigo-600 dark:hover:bg-indigo-700"
                 >
                   Send
                 </button>

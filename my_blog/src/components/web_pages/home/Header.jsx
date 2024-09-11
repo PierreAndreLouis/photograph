@@ -53,7 +53,7 @@ export default function Header() {
         to='/'
         className='self-center whitespace-nowrap text-lg sm:text-2xl font-semibold dark:text-white'
       >
-        <span className='px-1 py-1 rounded-lg text-sky-600'>Pedro's</span> Blog
+        <span className='px-1 py-1 rounded-lg text-indigo-600'>Markething</span>
       </Link>
 
       <div className='flex gap-2 md:order-2 items-center'>
@@ -99,7 +99,7 @@ export default function Header() {
           </Dropdown>
         ) : (
           <Link to='/sign-in'>
-            <button className='px-3 py-1 rounded-lg bg-sky-500 text-gray-100'>
+            <button className='px-3 py-1 rounded-lg bg-indigo-500 text-gray-100'>
               Login
             </button>
           </Link>
@@ -113,7 +113,7 @@ export default function Header() {
           <Navbar.Link
             active={path === '/'}
             as={'div'}
-            className={`text-center dark:md:hover:text-sky-500 md:hover:text-sky-700 ${path === '/' ? 'bg-sky-600 text-white rounded-md' : ''
+            className={`text-center dark:md:hover:text-indigo-500 md:hover:text-indigo-700 ${path === '/' ? 'bg-indigo-600 text-white rounded-md' : ''
               }`}
           >
             Accueil
@@ -124,7 +124,7 @@ export default function Header() {
           <Navbar.Link
             active={path === '/about'}
             as={'div'}
-            className={`text-center dark:md:hover:text-sky-500 md:hover:text-sky-700  ${path === '/about' ? 'bg-sky-600 text-white rounded-md' : ''
+            className={`text-center dark:md:hover:text-indigo-500 md:hover:text-indigo-700  ${path === '/about' ? 'bg-indigo-600 text-white rounded-md' : ''
               }`}
           >
             À propos
@@ -135,7 +135,7 @@ export default function Header() {
           <Navbar.Link
             active={path === '/blogs'}
             as={'div'}
-            className={`text-center dark:md:hover:text-sky-500 md:hover:text-sky-700  ${path === '/blogs' ? 'bg-sky-600 text-white rounded-md' : ''
+            className={`text-center dark:md:hover:text-indigo-500 md:hover:text-indigo-700  ${path === '/blogs' ? 'bg-indigo-600 text-white rounded-md' : ''
               }`}
           >
             Blogs
@@ -146,11 +146,11 @@ export default function Header() {
           <Navbar.Link
             active={path === '/reservation'}
             as={'div'}
-            className={`text-center ${path === '/reservation' ? 'bg-sky-600 text-white rounded-md' : ''
+            className={`text-center ${path === '/reservation' ? 'bg-indigo-600 text-white rounded-md' : ''
               }`}
           >
             <p
-              className='px-3 py-1 rounded-lg border border-sky-600 text-sky-600 text-md' >
+              className='px-3 py-1 rounded-lg border border-indigo-600 text-indigo-600 text-md' >
               Rendez-vous
             </p>
           </Navbar.Link>

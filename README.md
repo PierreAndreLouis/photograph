@@ -1,3 +1,41 @@
+1-  importation des composants du design.
+
+2-  creation du compte google
+         email:       photographyservice2024@gmail.com
+         password:    pedro46731710
+
+
+3-  connect to mongodb
+     -  connect with email
+     -  +new project
+     -  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Voici les informations sur les packages insaller dans le backend :
 
 
