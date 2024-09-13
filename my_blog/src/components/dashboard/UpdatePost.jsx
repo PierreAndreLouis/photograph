@@ -101,7 +101,7 @@ export default function UpdatePost() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 1000);
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -366,6 +366,22 @@ export default function UpdatePost() {
       setPublishError('Une erreur est survenue');
     }
   };
+
+
+
+
+
+
+  console.log("aaaaaaaaaa", formData.content)
+
+
+
+
+
+
+
+
+
   return (
     <div className='p-3 pt-20 max-w-3xl mx-auto min-h-screen'>
       <h1 className='text-center text-3xl my-7 font-semibold'>Mettre à jour le poste</h1>
@@ -439,7 +455,9 @@ export default function UpdatePost() {
                   <CKEditor
                     editor={ClassicEditor}
                     config={editorConfig}
-                    data={showContent && formData.content}
+                    // data={showContent && formData.content || ""}
+                    data={formData.content && showContent && formData.content || ""}
+                    // data={formData.content || ""}
                     placeholder='Loading...'
                   
                     onChange={(event, editor) => {
