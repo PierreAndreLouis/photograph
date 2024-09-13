@@ -1,40 +1,38 @@
 import React from 'react'
-import Hero5 from './Hero5'
-import Company3 from './Company3'
-import Service9 from './Service9'
-import Service2 from './Service2'
+import Hero38 from './Hero38'
+import Service7 from './Service7'
 import Service4 from './Service4'
-import Statistic1 from './Statistic1'
+import Company1 from './Company1'
 import Gallery5 from './Gallery5'
-import Pricing4 from './Pricing4'
+import Testimonial4 from './Testimonial4'
+import Pricing2 from './Pricing2'
+// import Footer5 from './Footer5'
+import Contact5 from './Contact5'
 import CTA12 from './CTA12'
-import Testimonial9 from './Testimonial9'
-import CTA3 from './CTA3'
-import Faq4 from './Faq4'
-import Blogs2 from './Blogs2'
-import Contact3 from './Contact3'
-
-
-
+import Statistic4 from '../about/Statistic4'
+import Product from './Product'
+import CTA10 from './CTA10'
+import Blog from './Blog'
+import Faq5 from './Faq5'
 
 export default function homePage() {
     return (
         <div>
-            <Hero5 />
-            <Company3 />
-            <Service9 />
-            <Service2 />
+            <Hero38 />
+            <Service7 />
             <Service4 />
-            <Statistic1 />
-            <Gallery5 />
-            <Pricing4 />
+            <Statistic4 />
             <CTA12 />
-            <Testimonial9 />
-            <CTA3 />
-            <Faq4 />
-            <Blogs2 />
-            <Contact3 />
-
+            <Faq5 />
+            <Gallery5 />
+            <Company1 />
+            <Product grid={ true} />
+            <CTA10 />
+            <Testimonial4 />
+            <Pricing2 />
+            <Blog />
+            <Contact5 />
+            {/* <Footer5 /> */}
 
         </div>
     )

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Pricing2 = () => {
   const plans = [
@@ -73,9 +74,9 @@ const Pricing2 = () => {
                   </li>
                 ))}
               </ul>
-              <a href="#" className="text-white bg-sky-600 hover:bg-sky-700 focus:ring-4 focus:ring-sky-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-sky-900">
+              <Link to="/reservation" className="text-white bg-sky-600 hover:bg-sky-700 focus:ring-4 focus:ring-sky-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-sky-900">
                 Réserver maintenant
-              </a>
+              </Link>
             </div>
           ))}
         </div>

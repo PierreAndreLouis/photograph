@@ -22,7 +22,7 @@ import OnlyAdminPrivateRoute from './components/dashboard/OnlyAdminPrivateRoute'
 import UpdatePost from './components/dashboard/UpdatePost';
 import ScrollToTop from './components/dashboard/ScrollToTop';
 import ProductPage from './components/web_pages/product/ProductPage';
-import Footer4 from './components/web_pages/home/Footer4';
+import Footer5 from './components/web_pages/home/Footer5';
 
 function AppContent() {
   const location = useLocation(); // Utilisation de useLocation pour obtenir le chemin actuel
@@ -68,7 +68,7 @@ function AppContent() {
       </Routes>
 
       {/* Afficher le footer uniquement si la route actuelle ne fait pas partie des routes admin */}
-      {!shouldHideFooter && <Footer4 />}
+      {!shouldHideFooter && <Footer5 />}
     </>
   );
 }

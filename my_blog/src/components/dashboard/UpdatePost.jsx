@@ -1,6 +1,4 @@
 import { Alert, Button, FileInput, Select, TextInput } from 'flowbite-react';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
 import {
   getDownloadURL,
   getStorage,
@@ -14,11 +12,271 @@ import 'react-circular-progressbar/dist/styles.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+
+
+import { useRef } from 'react';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+// npm install--save @ckeditor/ckeditor5-react 
+
+
+import {
+  ClassicEditor,
+  Autoformat,
+  Autosave,
+  BalloonToolbar,
+  BlockQuote,
+  Bold,
+  CloudServices,
+  Essentials,
+  FullPage,
+  GeneralHtmlSupport,
+  HtmlComment,
+  Indent,
+  IndentBlock,
+  Italic,
+  Link,
+  List,
+  ListProperties,
+  Paragraph,
+  PictureEditing,
+  Table,
+  TableCaption,
+  TableCellProperties,
+  TableColumnResize,
+  TableProperties,
+  TableToolbar,
+  TextTransformation,
+  TodoList,
+  Underline,
+  Undo,
+  Alignment,
+  FontBackgroundColor,
+  FontColor,
+  FontFamily,
+  FontSize,
+  MediaEmbed,
+  RemoveFormat,
+  SpecialCharacters,
+  SpecialCharactersArrows,
+  SpecialCharactersCurrency,
+  SpecialCharactersEssentials,
+  SpecialCharactersLatin,
+  SpecialCharactersMathematical,
+  SpecialCharactersText,
+  Subscript,
+  Superscript,
+
+} from 'ckeditor5';
+
+import translations from 'ckeditor5/translations/fr.js';
+
+import 'ckeditor5/ckeditor5.css';
+import 'ckeditor5-premium-features/ckeditor5-premium-features.css';
+
+import '../../app.css';
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 export default function UpdatePost() {
+
+
+
+  ///////////////////////////////////////////////////////////////////
+
+
+
+  const [showContent, setShowContent] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+
+  const editorContainerRef = useRef(null);
+  const editorRef = useRef(null);
+  const [isLayoutReady, setIsLayoutReady] = useState(false);
+
+  useEffect(() => {
+    setIsLayoutReady(true);
+
+    return () => setIsLayoutReady(false);
+  }, []);
+
+  const editorConfig = {
+    toolbar: {
+      items: [
+        'undo',
+        'redo',
+        '|',
+        '|',
+        'fontSize',
+        'fontFamily',
+        'fontColor',
+        'fontBackgroundColor',
+        '|',
+        'bold',
+        'italic',
+        'underline',
+        'link',
+        'insertTable',
+        '|',
+        'alignment',
+        'blockQuote',
+        'bulletedList',
+        'numberedList',
+        'todoList',
+        'outdent',
+        'indent',
+        '|',
+
+
+
+
+      ],
+      shouldNotGroupWhenFull: false
+    },
+    plugins: [
+      Autoformat,
+      Autosave,
+      BalloonToolbar,
+      BlockQuote,
+      Bold,
+      CloudServices,
+      Essentials,
+      FullPage,
+      GeneralHtmlSupport,
+      HtmlComment,
+      Indent,
+      IndentBlock,
+      Italic,
+      Link,
+      List,
+      ListProperties,
+      Paragraph,
+      PictureEditing,
+      Table,
+      TableCaption,
+      TableCellProperties,
+      TableColumnResize,
+      TableProperties,
+      TableToolbar,
+      TextTransformation,
+      TodoList,
+      Underline,
+      Undo,
+      Alignment,
+      FontBackgroundColor,
+      FontColor,
+      FontFamily,
+      FontSize,
+      MediaEmbed,
+      RemoveFormat,
+      SpecialCharacters,
+      SpecialCharactersArrows,
+      SpecialCharactersCurrency,
+      SpecialCharactersEssentials,
+      SpecialCharactersLatin,
+      SpecialCharactersMathematical,
+      SpecialCharactersText,
+      Subscript,
+      Superscript,
+
+
+    ],
+
+    fontFamily: {
+      supportAllValues: true
+    },
+    fontSize: {
+      options: [10, 12, 14, 'default', 18, 24, 30, 36],
+      supportAllValues: true
+    },
+
+
+
+    balloonToolbar: ['bold', 'italic', '|', 'link',
+      '|', 'bulletedList', 'numberedList'],
+
+
+
+
+    htmlSupport: {
+      allow: [
+        {
+          name: /^.*$/,
+          styles: true,
+          attributes: true,
+          classes: true
+        }
+      ]
+    },
+
+
+
+    initialData: '',
+      
+    language: 'fr',
+    link: {
+      addTargetToExternalLinks: true,
+      defaultProtocol: 'https://',
+      decorators: {
+        toggleDownloadable: {
+          mode: 'manual',
+          label: 'Downloadable',
+          attributes: {
+            download: 'file'
+          }
+        }
+      }
+    },
+    list: {
+      properties: {
+        styles: true,
+        startIndex: true,
+        reversed: true
+      }
+    },
+    menuBar: {
+      isVisible: true
+    },
+    placeholder: 'Type or paste your content here!',
+    table: {
+      contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableProperties', 'tableCellProperties']
+    },
+    translations: [translations,]
+
+  };
+
+
+
+  ///////////////////////////////////////////////////////////////////////
+
+
+
   const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
   const [formData, setFormData] = useState({});
+  // const [formData, setFormData] = useState({
+  //   title: '',
+  //   category: '',
+  //   content: '', // Ajoutez une valeur par défaut pour content
+  //   image: ''
+  // });
+
   const [publishError, setPublishError] = useState(null);
   const { postId } = useParams();
 
@@ -170,16 +428,33 @@ export default function UpdatePost() {
           />
         )}
        
-        <ReactQuill
-          theme='snow'
-          value={formData.content}
-          placeholder='Écrivez quelque chose...'
-          className='h-72 mb-12'
-          required
-          onChange={(value) => {
-            setFormData({ ...formData, content: value });
-          }}
-        />
+
+
+        <div className="main-containerhh">
+          <div className="editor-container   editor-container_classic-editor" ref={editorContainerRef}>
+            <div className="editor-container__editor ">
+              <div ref={editorRef}>
+                {isLayoutReady && (
+                  <CKEditor
+                    editor={ClassicEditor}
+                    config={editorConfig}
+                    data={showContent && formData.content}
+                    placeholder='Loading...'
+                  
+                    onChange={(event, editor) => {
+                      const data = editor.getData();
+                      setFormData({ ...formData, content: data });
+                    }}
+                  />
+
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
         <Button type='submit' gradientDuoTone='purpleToPink'>
           Mettre à jour le poste
         </Button>

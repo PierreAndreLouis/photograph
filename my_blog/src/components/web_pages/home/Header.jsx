@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toggleTheme } from '../../../redux/theme/themeSlice';
 import { signoutSuccess } from '../../../redux/user/userSlice';
 import { useEffect, useState } from 'react';
+import { MdPhotoCamera } from "react-icons/md";
+
 
 export default function Header() {
   const path = useLocation().pathname;
@@ -51,9 +53,10 @@ export default function Header() {
     <Navbar className='border-b-2 fixed z-[150] left-0 right-0 top-0'>
       <Link
         to='/'
-        className='self-center whitespace-nowrap text-lg sm:text-2xl font-semibold dark:text-white'
+        className='self-center whitespace-nowrap text-lg sm:text-2xl font-semibold dark:text-white flex justify-center items-center'
       >
-        <span className='px-1 py-1 rounded-lg text-indigo-600'>Markething</span>
+        <MdPhotoCamera className='text-3xl text-sky-600'/>
+        <span className='px-1 py-1 rounded-lg text-sky-600'>Photography</span>
       </Link>
 
       <div className='flex gap-2 md:order-2 items-center'>
@@ -69,7 +72,7 @@ export default function Header() {
             arrowIcon={false}
             inline
             label={
-              <Avatar alt='utilisateur' img={currentUser.profilePicture} rounded className='w-10 h-10' />
+              <Avatar alt='utilisateur' img={currentUser.profilePicture} rounded className='w-10 h-10 border rounded-full' />
             }
           >
             <Dropdown.Header>
@@ -99,7 +102,7 @@ export default function Header() {
           </Dropdown>
         ) : (
           <Link to='/sign-in'>
-            <button className='px-3 py-1 rounded-lg bg-indigo-500 text-gray-100'>
+            <button className='px-3 py-1 rounded-lg bg-sky-500 text-gray-100'>
               Login
             </button>
           </Link>
@@ -113,7 +116,7 @@ export default function Header() {
           <Navbar.Link
             active={path === '/'}
             as={'div'}
-            className={`text-center dark:md:hover:text-indigo-500 md:hover:text-indigo-700 ${path === '/' ? 'bg-indigo-600 text-white rounded-md' : ''
+            className={`text-center dark:md:hover:text-sky-500 md:hover:text-sky-700 ${path === '/' ? 'bg-sky-600 text-white rounded-md' : ''
               }`}
           >
             Accueil
@@ -124,7 +127,7 @@ export default function Header() {
           <Navbar.Link
             active={path === '/about'}
             as={'div'}
-            className={`text-center dark:md:hover:text-indigo-500 md:hover:text-indigo-700  ${path === '/about' ? 'bg-indigo-600 text-white rounded-md' : ''
+            className={`text-center dark:md:hover:text-sky-500 md:hover:text-sky-700  ${path === '/about' ? 'bg-sky-600 text-white rounded-md' : ''
               }`}
           >
             À propos
@@ -135,7 +138,7 @@ export default function Header() {
           <Navbar.Link
             active={path === '/blogs'}
             as={'div'}
-            className={`text-center dark:md:hover:text-indigo-500 md:hover:text-indigo-700  ${path === '/blogs' ? 'bg-indigo-600 text-white rounded-md' : ''
+            className={`text-center dark:md:hover:text-sky-500 md:hover:text-sky-700  ${path === '/blogs' ? 'bg-sky-600 text-white rounded-md' : ''
               }`}
           >
             Blogs
@@ -146,11 +149,11 @@ export default function Header() {
           <Navbar.Link
             active={path === '/reservation'}
             as={'div'}
-            className={`text-center ${path === '/reservation' ? 'bg-indigo-600 text-white rounded-md' : ''
+            className={`text-center ${path === '/reservation' ? 'bg-sky-600 text-white rounded-md' : ''
               }`}
           >
             <p
-              className='px-3 py-1 rounded-lg border border-indigo-600 text-indigo-600 text-md' >
+              className='px-3 py-1 rounded-lg border border-sky-600 text-sky-600 text-md' >
               Rendez-vous
             </p>
           </Navbar.Link>

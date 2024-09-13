@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Product({ grid }) {
     return (
         <div className='mx-4 pb-10'>
-            <div className={`md:grid ${grid ? 'md:grid-cols-2 my-20' : ""} bg-sky-50  dark:bg-gray-800 pt-16 pb-16 px-4 max-w-6xl mx-auto rounded-md overflow-hidden shadow-md`}>
+            <div className={`md:grid ${grid ? 'md:grid-cols-2 my-20' : ""} bg-sky-50 gap-6 dark:bg-gray-800 pt-16 pb-16 px-4 max-w-6xl mx-auto rounded-md overflow-hidden shadow-md`}>
                 <div className="relative">
                     <img
                         className="w-full max-h-[25rem] h-full object-cover rounded-md"
@@ -15,7 +15,7 @@ export default function Product({ grid }) {
                         EN SOLDE
                     </div>
                 </div>
-                <div className="p-6">
+                <div className="pt-6">
                     <h3 className="text-xl md:text-2xl text-gray-800 dark:text-sky-500 font-bold mb-4">
                         Découvrez notre produit le plus populaire !
                     </h3>

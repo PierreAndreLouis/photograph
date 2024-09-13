@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 
 // Sample data
 const images = [
-    { id: 1, titre: "This is image 1", category: 'Clound', src: 'https://amincode.com/html/one-pages/flex-it/assets/images/portfolio/1.jpg' },
-    { id: 2, titre: "This is image 2", category: 'hosting', src: 'https://amincode.com/html/one-pages/flex-it/assets/images/portfolio/2.jpg' },
-    { id: 3, titre: "This is image 3", category: 'hosting', src: 'https://amincode.com/html/one-pages/flex-it/assets/images/portfolio/3.jpg' },
-    { id: 4, titre: "This is image 4", category: 'hosting', src: 'https://amincode.com/html/one-pages/flex-it/assets/images/portfolio/4.jpg' },
-    { id: 5, titre: "This is image 5", category: 'data analaysis', src: 'https://amincode.com/html/one-pages/flex-it/assets/images/portfolio/5.jpg' },
-    { id: 6, titre: "This is image 6", category: 'data analaysis', src: 'https://amincode.com/html/one-pages/flex-it/assets/images/portfolio/6.jpg' },
-    { id: 7, titre: "This is image 7", category: 'data analaysis', src: 'https://amincode.com/html/one-pages/flex-it/assets/images/portfolio/1.jpg' },
-    { id: 8, titre: "This is image 8", category: 'data analaysis', src: 'https://amincode.com/html/one-pages/flex-it/assets/images/portfolio/2.jpg' },
-    { id: 9, titre: "This is image 9", category: 'data analaysis', src: 'https://amincode.com/html/one-pages/flex-it/assets/images/portfolio/3.jpg' },
+    { id: 1, titre: "This is image 1", category: 'Filter 1', src: 'https://www.redsharknews.com/hubfs/Portrait_female_Midjourney.jpg' },
+    { id: 2, titre: "This is image 2", category: 'Filter 2', src: 'https://img.freepik.com/photos-premium/femme-sous-pluie-regardant-camera_882954-5827.jpg?w=996' },
+    { id: 3, titre: "This is image 3", category: 'Filter 2', src: 'https://petapixel.com/assets/uploads/2013/01/09-ymgXm.jpg' },
+    { id: 4, titre: "This is image 4", category: 'Filter 2', src: 'https://petapixel.com/assets/uploads/2013/01/01-fd70q.jpg' },
+    { id: 5, titre: "This is image 5", category: 'Filter 3', src: 'https://petapixel.com/assets/uploads/2013/01/05-2uhoC.jpg' },
+    { id: 6, titre: "This is image 6", category: 'Filter 3', src: 'https://petapixel.com/assets/uploads/2013/01/08-hXfEc.jpg' },
+    { id: 7, titre: "This is image 7", category: 'Filter 3', src: 'https://petapixel.com/assets/uploads/2013/01/10-DOKQ0.jpg' },
+    { id: 8, titre: "This is image 8", category: 'Filter 3', src: 'https://petapixel.com/assets/uploads/2013/01/13-Ru9Ga.jpg' },
+    { id: 9, titre: "This is image 9", category: 'Filter 3', src: 'https://inspgr.id/app/uploads/2016/10/photo-foth-feature.jpg' },
 ];
 const buttonStyles = "px-4 py-2 text-white rounded hover:bg-opacity-80 transition";
-const activeButtonStyles = "bg-indigo-500";
+const activeButtonStyles = "bg-sky-500";
 const defaultButtonStyles = "bg-gray-500";
 
 const Gallery5 = () => {
@@ -66,15 +66,15 @@ const Gallery5 = () => {
                 index: prevIndex
             };
         });
-    };
+    }; 
 
     const filteredImages = selectedCategory === 'all' ? images : images.filter(image => image.category === selectedCategory);
 
     return (
-        <div className='bg-slate-100 dark:bg-gray-900 py-10'>
+        <div className='bg-sky-50 dark:bg-gray-900 py-10 pt-20 '>
             <div className=''>
-                <h2 className="text-gray-600 dark:text-gray-400 text-3xl font-bold text-center sm:text-4xl">Découvrez Nos Réalisations</h2>
-                <p className="max-w-3xl mx-auto mt-2 text-lg dark:text-gray-500 text-center">
+                <h2 className="text-sky-600 dark:text-gray-400 text-3xl font-bold text-center sm:text-3xl">Découvrez Nos Réalisations</h2>
+                <p className="max-w-3xl mx-auto mt-2 text-md md:text-lg text-gray-600 dark:text-gray-500 text-center">
                     Explorez les projets réussis qui témoignent de notre expertise et créativité.                </p>
             </div>
             <div className="p-4 max-w-6xl mx-auto px-4 py-20 pt-14">
@@ -120,13 +120,13 @@ const Gallery5 = () => {
                         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{modalContent.titre}</h2>
                         <button
                             onClick={handlePrev}
-                            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-indigo-500 text-white px-4 py-2 rounded-full"
+                            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-sky-500 text-white px-4 py-2 rounded-full"
                         >
                             Prev
                         </button>
                         <button
                             onClick={handleNext}
-                            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-indigo-500 text-white px-4 py-2 rounded-full"
+                            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-sky-500 text-white px-4 py-2 rounded-full"
                         >
                             Next
                         </button>

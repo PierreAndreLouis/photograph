@@ -2,9 +2,9 @@ import React from 'react';
 
 const features = [
   {
-    title: 'Stratégies efficaces',
-    description: ' plans de marketing éprouvés conçus pour vous aider à atteindre vos objectifs et surpasser vos concurrents.',
-    img_icon: 'https://github.com/LouisPierre-Andre/images/blob/main/Strategie%20Markeging/Strategie%20efficace-01.png?raw=true',
+    title: 'Paiements en ligne ou sur place',
+    description: ' Permettez à vos clients de payer un acompte ou le prix total lors de la réservation ou accepter le paiement sur place via la fonction POS dans SimplyBook.me',
+    img_icon: 'https://simplybook.me/build/images/icons/features/static/icon_payment.790dae82.svg',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -30,9 +30,9 @@ const features = [
     ),
   },
   {
-    title: 'Support constant',
-    description: 'Une assistance continue qui garantit que toutes vos questions sont répondues et que vous êtes guidé tout au long du processus.',
-    img_icon: 'https://github.com/LouisPierre-Andre/images/blob/main/Strategie%20Markeging/support%20constant-01.png?raw=true',
+    title: "Aucun conflit d'horaire",
+    description: 'Vous pouvez activer la synchronisation bidirectionnelle des calendriers entre vos calendriers professionnels et personnels Google et Outlook. En activant cette fonction pour tous les membres de votre personnel, vous évitez de doubler votre temps de travail.',
+    img_icon: 'https://simplybook.me/build/images/icons/features/static/icon_reschedule-booking.bbc3a56e.svg',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -55,9 +55,9 @@ const features = [
     ),
   },
   {
-    title: 'Résultats mesurables',
-    description: 'Des rapports détaillés qui montrent vos progrès, expliquent ce qui fonctionne, et permettent d’ajuster les stratégies pour de meilleurs résultats.',
-    img_icon: 'https://github.com/LouisPierre-Andre/images/blob/main/Strategie%20Markeging/result%20mesurable-01.png?raw=true',
+    title: 'Rappels automatiques',
+    description: 'Réduisez les non-présentations en envoyant des notifications automatiques par SMS et par e-mail à vos clients avant le début de l"événement.',
+    img_icon: 'https://simplybook.me/build/images/icons/features/static/icon_reminders.4f32dd3f.svg',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -102,27 +102,28 @@ const features = [
 
 const Service4 = () => {
   return (
-    <section className="bg-white dark:bg-gray-900 text-slate-900 dark:text-slate-200 py-10">
-      <div className="container max-w-xl p-6 mx-auto space-y-12 lg:px-8 lg:max-w-7xl">
+    <section className="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-200 py-10">
+      <div className="containerss p-6 px-3 mx-auto space-y-12 lg:px-8 lg:max-w-7xl ">
         <div>
-          <h2 className="text-2xl text-gray-700 dark:text-gray-300 font-bold text-center sm:text-4xl">Ce que vous recevrez de nous</h2>
-          <p className="max-w-3xl text-gray-600 dark:text-gray-400 mx-auto mt-2 text-md text-center">
+          <h2 className="text-3xl text-sky-600 dark:text-sky-600 font-bold text-center sm:text-3xl">
+            Alors, pourquoi nous choisir ?</h2>
+          <p className="max-w-3xl text-gray-600 dark:text-gray-200 mx-auto mt-4 text-md text-center">
             Découvrez les avantages que nous offrons pour maximiser vos résultats.          </p>
         </div>
-        <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
+        <div className="grid lg:gap-8 lg:grid-cols-2 ">
           <div>
-            <div className="mt-4 space-y-12">
+            <div className="mt-4 space-y-6 lg:space-y-12">
               {features.map((feature, index) => (
-                <div key={index} className="flex">
+                <div key={index} className="flex flex-col md:flex-row border border-gray-600 rounded-xl bg-gray-100 dark:bg-gray-800 lg:dark:bg-transparent py-4 px-2 lg:border-none lg:bg-transparent lg:p-0 ">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-md bg-indigo-600 ">
+                    <div className="flex items-center justify-center w-20 h-w-20 rounded-md  ">
                       {/* {feature.icon} */}
-                      <img className='w-[70%] ' src={feature.img_icon} alt='' />
+                      <img className='w-[100%] ' src={feature.img_icon} alt='' />
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-medium">{feature.title}</h4>
-                    <p className="mt-2">{feature.description}</p>
+                    <h4 className="text-2xl font-bold dark:text-gray-200 text-gray-700">{feature.title}</h4>
+                    <p className="mt-2 text-gray-500 dark:text-gray-400">{feature.description}</p>
                   </div>
                 </div>
               ))}
@@ -130,13 +131,10 @@ const Service4 = () => {
           </div>
           <div aria-hidden="true" className="mt-10 lg:mt-0">
             <img
-              width="600"
-              // height="600"
               
-              // src="https://www.dynamique-mag.com/wp-content/uploads/436926f74b76d7c3e5cb958227b46407.jpg"
-              src="https://imrsiv.fr/wp-content/uploads/2021/08/Outils-Marketing-Strategie-1170x570.jpg"
+              src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2021/03/photography-projects-1001.jpg?w=1500&ssl=1"
 
-              className="lg:h-96 object-cover mx-auto rounded-lg shadow-lg dark:bg-gray-500"
+              className="lg:h-96 object-cover mx-auto rounded-lg shadow-lg dark:bg-sky-500"
               alt="Learning features"
             />
           </div>

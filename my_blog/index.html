@@ -1,62 +1,52 @@
 <!doctype html>
-<html lang="fr"> <!-- Utilise "fr" si ton site est principalement en français -->
+<html lang="fr">
 
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Compatibilité avec IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="google-site-verification" content="N-zeL1g6i8H01BkSrgIW_lM7MYrYGG3lVzsGMGvSq4o" />
-
+    <!-- Google site verification -->
+    <!-- <meta name="google-site-verification" content="N-zeL1g6i8H01BkSrgIW_lM7MYrYGG3lVzsGMGvSq4o" /> -->
+         <meta name="google-site-verification" content="3RQHYdN_AI2CBfB6GxDsbkxcKlyMCJG9txckWBtODiI" />
+    <!-- Stripe JS pour les paiements -->
     <script src="https://js.stripe.com/v3/"></script>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="profil.png" /> <!-- Mets à jour le chemin du favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/profil.png" /> <!-- Mets à jour le chemin si nécessaire -->
 
-    <!-- Title par défaut -->
-    <title>Pierre-André Louis - Services de Marketing Digital</title>
-
-    <!-- Description par défaut (peut être ajustée avec Helmet) -->
+    <!-- Title et description pour le SEO -->
+    <title>Pierre-André Louis - Services de Photographie Professionnelle</title>
     <meta name="description"
-      content="Boostez votre visibilité en ligne avec les services de marketing digital de Pierre-André Louis. Stratégies sur mesure pour entrepreneurs et entreprises." />
+      content="Explorez les services de photographie professionnelle offerts par Pierre-André Louis. Capturez vos moments spéciaux avec style et expertise." />
 
-    <!-- Mots-clés SEO -->
-    <meta name="keywords"
-      content="marketing digital, stratégie marketing, SEO, publicité en ligne, réseaux sociaux, gestion de campagnes, marketing pour entrepreneurs, marketing pour entreprises" />
-
-    <!-- SEO et Balises sociales de base (remplacées dynamiquement par Helmet) -->
+    <!-- SEO et Open Graph pour le partage social -->
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Pierre-André Louis - Services de Marketing Digital" />
+    <meta property="og:title" content="Pierre-André Louis - Photographie Professionnelle" />
     <meta property="og:description"
-      content="Découvrez comment Pierre-André Louis peut vous aider à augmenter votre présence en ligne avec des stratégies de marketing digital efficaces." />
-    <meta property="og:image" content="/path/to/marketing-default-image.jpg" />
-    <!-- Utilise une image appropriée pour les services de marketing -->
-    <meta property="og:url" content="https://mon-site.com" />
+      content="Découvrez des services de photographie professionnelle pour capturer vos moments précieux." />
+    <meta property="og:image" content="/images/default-photography.jpg" /> <!-- Mets à jour le chemin de l'image -->
 
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Pierre-André Louis - Services de Marketing Digital" />
-    <meta name="twitter:description"
-      content="Améliorez votre stratégie digitale avec Pierre-André Louis. Services de marketing sur mesure pour optimiser votre visibilité en ligne." />
-    <meta name="twitter:image" content="/path/to/marketing-default-image.jpg" />
-
-    <!-- Styles CSS globaux si nécessaire -->
-    <!-- <link rel="stylesheet" href="/path/to/global-styles.css" /> -->
+    <!-- Styles CSS globaux -->
+    <link rel="stylesheet" href="/styles/global.css" /> <!-- Assure-toi d'inclure les styles nécessaires -->
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root" role="main"></div> <!-- Ajout du rôle pour l'accessibilité -->
+
+    <!-- Script principal -->
     <script type="module" src="/src/main.jsx"></script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFV9GQVC5K"></script>
+    <!-- {/* Google tag (gtag.js) */} -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFQCP2FJJZ"></script>
     <script>
+
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
+      gtag('config', 'G-NFQCP2FJJZ');
 
-      gtag('config', 'G-GFV9GQVC5K');
     </script>
   </body>
 

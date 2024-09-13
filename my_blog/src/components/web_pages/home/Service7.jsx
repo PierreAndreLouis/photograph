@@ -56,7 +56,7 @@ const Service7 = () => {
                     <h1 className="inline-block text-sky-600 text-3xl text-center font-bold mb-3 border-b-2 border-primary pb-1">
                         Voici ce que nous vous proposons
                     </h1>
-                    <p className="text-slate-500 text-center md:w-[50%] mx-auto">
+                    <p className="text-slate-500 dark:text-slate-100 text-center md:w-[50%] mx-auto">
                         Découvre nos services de photographie professionnels adaptés à tous tes besoins. Des portraits aux événements, en passant par la retouche, nous avons tout ce qu'il te faut.
                     </p>
                 </div>
@@ -66,7 +66,7 @@ const Service7 = () => {
                             {Services.map(({ name, description, image, icon, bgColor }) => (
                                 <div
                                     key={name}
-                                    className={` ${bgColor} overflow-hidden h-64 flex flex-col justify-end relative rounded-xl text-white bg-[url('${image}')] bg-cover bg-no-repeat bg-center bg-blend-overlay`}
+                                    className={` ${bgColor}  overflow-hidden h-64 flex flex-col justify-end relative rounded-xl text-white bg-[url('${image}')] bg-cover bg-no-repeat bg-center bg-blend-overlay`}
                                 >
                                     <div id="containt" className=" relative z-30 p-3 md:p-16 backdrop-blur-xs space-y-3 rounded-xl">
                                         <p className="text-sky-400 ">{icon}</p>

@@ -76,7 +76,7 @@ export default function Faq5() {
                     </div>
 
 
-                    <div className='grid gap-8 '>
+                    <div className='grid gap-3 '>
                         {faqItems.slice(0, 4).map((item, index) => (
                             <div key={item.id} className='grid bg-white rounded-xl dark:bg-slate-800'>
                                 <h3

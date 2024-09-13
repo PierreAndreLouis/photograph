@@ -40,7 +40,7 @@ export default function Blog() {
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="object-cover object-center w-full h-48 border rounded-t-xl border-gray-400 dark:border-gray-600 border-b-0"
+                    className="object-cover object-center w-full h-52 border rounded-t-xl border-gray-400 dark:border-gray-600 border-b-0"
                   />
                   <div className="flex flex-col rounded-b-xl px-4 py-6 bg-gray-100 dark:bg-gray-800 border border-gray-400 dark:border-gray-600">
                     <p href="#"
@@ -65,7 +65,7 @@ export default function Blog() {
                     >
                     </p>
                     <a href="#"
-                      className="inline-block pb-1 text-base font-black text-sky-600 dark:text-sky-400 uppercase border-b border-transparent hover:border-sky-600 dark:hover:border-sky-400">
+                      className="inline-block mt-4 pb-1 text-base font-black text-sky-600 dark:text-sky-400 uppercase border-b border-transparent hover:border-sky-600 dark:hover:border-sky-400">
                       Lire Plus -
                     </a>
                   </div>
