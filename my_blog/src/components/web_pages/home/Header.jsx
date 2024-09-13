@@ -55,7 +55,7 @@ export default function Header() {
         to='/'
         className='self-center whitespace-nowrap text-lg sm:text-2xl font-semibold dark:text-white flex justify-center items-center'
       >
-        <MdPhotoCamera className='text-3xl text-sky-600'/>
+        <MdPhotoCamera className='text-3xl text-sky-600' />
         <span className='px-1 py-1 rounded-lg text-sky-600'>Photography</span>
       </Link>
 
@@ -76,17 +76,23 @@ export default function Header() {
             }
           >
             <Dropdown.Header>
+
+
               <span className='block text-sm'>@{currentUser.username}</span>
               <span className='block text-sm font-medium truncate'>
                 {currentUser.email}
               </span>
+
+
             </Dropdown.Header>
 
-            <Link to='/dashboard?tab=profile'>
-              <Dropdown.Item>Profil</Dropdown.Item>
-            </Link>
 
-            <Dropdown.Divider />
+
+
+
+
+
+
 
             {currentUser.isAdmin && (
               <Link to='/dashboard?tab=dash'>
@@ -97,6 +103,66 @@ export default function Header() {
             )}
 
             <Dropdown.Divider />
+
+
+            <Link to='/dashboard?tab=profile'>
+              <Dropdown.Item>Profil</Dropdown.Item>
+            </Link>
+
+
+            <Dropdown.Divider />
+
+            {currentUser.isAdmin && (
+              <Link to='/dashboard?tab=create-post'>
+                <Dropdown.Item labelColor='dark' as='div'>
+                  Créer un post
+                </Dropdown.Item>
+              </Link>
+            )}
+
+            
+            <Dropdown.Divider />
+
+            {currentUser.isAdmin && (
+              <Link to='/dashboard?tab=posts'>
+                <Dropdown.Item labelColor='dark' as='div'>
+                  Posts
+                </Dropdown.Item>
+              </Link>
+            )}
+
+
+            <Dropdown.Divider />
+
+            {currentUser.isAdmin && (
+              <Link to='/dashboard?tab=users'>
+                <Dropdown.Item labelColor='dark' as='div'>
+                  Utilisateurs
+                </Dropdown.Item>
+              </Link>
+            )}
+
+            <Dropdown.Divider />
+
+            {currentUser.isAdmin && (
+              <Link to='/dashboard?tab=comments'>
+                <Dropdown.Item labelColor='dark' as='div'>
+                  Commentaires
+                </Dropdown.Item>
+              </Link>
+            )}
+
+            <Dropdown.Divider />
+
+
+
+
+
+
+
+
+
+
 
             <Dropdown.Item onClick={handleSignout}>Déconnexion</Dropdown.Item>
           </Dropdown>
