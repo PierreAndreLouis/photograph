@@ -78,7 +78,8 @@ import translations from 'ckeditor5/translations/fr.js';
 import 'ckeditor5/ckeditor5.css';
 import 'ckeditor5-premium-features/ckeditor5-premium-features.css';
 
-import '../../app.css';
+// import '../../app.css';
+import './style.css'
 
 
 
