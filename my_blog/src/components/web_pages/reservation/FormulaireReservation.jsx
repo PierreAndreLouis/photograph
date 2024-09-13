@@ -48,9 +48,9 @@ export default function FormulaireReservation() {
 
         setLoading(true); // Active le mode chargement
 
-        const serviceID = "service_29vmgsk";
-        const templateID = "template_jt4bvjk";
-        const publicKey = "Y4DfcLA5moa5C1k6K"; // Clé publique
+        const serviceID = import.meta.env.VITE_NEWSLETTER_SERVICE_ID;
+        const templateID = import.meta.env.VITE_NEWSLETTER_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_NEWSLETTER_PUBLIC_ID;; // Clé publique
 
         emailjs.init(publicKey);
 

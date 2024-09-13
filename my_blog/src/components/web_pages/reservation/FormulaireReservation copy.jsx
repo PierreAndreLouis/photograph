@@ -230,9 +230,9 @@ export default function Formulaire_reservation() {
                         <button
                             disabled={loading}
                             onClick={(e) => { sendMail(e) }}
-                            className="bg-gray-900 dark:bg-gray-700 text-white py-2 px-4 rounded hover:bg-gray-800 dark:hover:bg-gray-600 focus:outline-none focus:shadow-outline"
                             type="submit">
                             {loading ? 'Envoi en cours...' : 'Rendez-vous'}
+                                className="bg-gray-900 dark:bg-gray-700 text-white py-2 px-4 rounded hover:bg-gray-800 dark:hover:bg-gray-600 focus:outline-none focus:shadow-outline"
                         </button>
                     </div>
                 </form>

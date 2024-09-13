@@ -9,6 +9,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 export default function Side_bar_blog({ setLoading, setShowMore }) {
     const [recentPosts, setRecentPosts] = useState(null);
 
+
     useEffect(() => {
         try {
             const fetchRecentPosts = async () => {
@@ -147,7 +148,7 @@ export default function Side_bar_blog({ setLoading, setShowMore }) {
     return (
         <div>
             <div className='md:min-w-[18rem] md:max-w-[18rem] lg:min-w-[22rem]'>
-                <div className='border  dark:border-gray-400 grid mx-4 p-4 bg-orange-100 dark:bg-gray-800 rounded-xl'>
+                <div className='border  dark:border-gray-400 grid mx-4 p-4 bg-gray-200 dark:bg-gray-800 rounded-xl'>
                     {/* Search Section */}
                     <form onSubmit={handleSubmit} className='grid gap-4'>
                         <TextInput
@@ -212,7 +213,7 @@ export default function Side_bar_blog({ setLoading, setShowMore }) {
                                 Rejoignez notre programme bêta pour plus de fonctionnalités
                             </h3>
                             <form
-                                action="https://gmail.us17.list-manage.com/subscribe/post?u=fe0c8c450e6899f0d6f68376c&amp;id=a07b274bde&amp;f_id=00d255e0f0"
+                                action={import.meta.env.VITE_NEWSLETTER_LINK}
                                 method="post"
                                 id="mc-embedded-subscribe-form"
                                 name="mc-embedded-subscribe-form"
@@ -303,7 +304,7 @@ export default function Side_bar_blog({ setLoading, setShowMore }) {
                                 />
                             </div>
                             <div >
-                                <div className='flex text-sm mb-1 gap-2 font-semibold text-orange-400 mt-2  '>
+                                <div className='flex text-sm mb-1 gap-2 font-semibold text-sky-600 mt-2  '>
                                     <MdOutlineDateRange className=' text-xl' />
                                     <p>{post && new Date(post.createdAt).toLocaleDateString()}</p>
                                 </div>

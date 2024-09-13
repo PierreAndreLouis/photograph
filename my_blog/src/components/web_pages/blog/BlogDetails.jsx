@@ -66,13 +66,13 @@ export default function BlogDetails() {
             <div className='pt-40 flex flex-col gap-10 md:flex-row md:gap-4 max-w-7xl mx-auto dark:bg-gray-900'>
                 <div className='w-[100%] flex flex-col gap-10 '>
                     <div className='bg-gray-100 dark:bg-gray-800 grid gap-4 md:mx-4 rounded-xl overflow-hidden'>
-                        <div className='relative w-full h-[18rem] sm:h-[20rem] md:h-[24rem] lg:h-[25rem] xl:h-[26rem]'>
+                        <div className='relative w-full ssh-[18rem] sssm:h-[20rem] ssmd:h-[24rem] sslg:h-[25rem] ssxl:h-[26rem]'>
                             <img
                                 className='w-full h-full object-cover'
                                 src={post?.image}
                                 alt={post?.title}
                             />
-                            <div className='absolute text-white flex flex-col justify-center items-center bottom-0 left-0 bg-orange-400 px-6 py-2'>
+                            <div className='absolute text-white flex flex-col justify-center items-center bottom-0 left-0 bg-sky-600 px-6 py-2'>
                                 <h3 className='text-4xl'>{post && new Date(post.createdAt).getDate()}</h3>
                                 <p>{post && new Date(post.createdAt).toLocaleString('fr-FR', { month: 'long' })}</p>
                             </div>
@@ -80,17 +80,17 @@ export default function BlogDetails() {
                         <div>
                             <div className='font-bold p-4 text-md md:text-lg lg:text-2xl border-b border-b-gray-300 dark:border-b-gray-600'>
                                 <p>{post?.title}</p>
-                                <Link to={`/search?category=${post?.category}`} className='font-normal text-orange-400 text-sm mt-2'>
+                                <Link to={`/search?category=${post?.category}`} className='font-normal text-sky-600 text-sm mt-2'>
                                     {post?.category}
                                 </Link>
                             </div>
                             <div className='flex gap-6 text-gray-500 dark:text-gray-400 flex-wrap px-4 py-2 border-b text-sm border-b-gray-300 dark:border-b-gray-600'>
                                 <div className='flex gap-2 flex-wrap'>
-                                    <FaReadme className='text-orange-400 text-xl' />
+                                    <FaReadme className='text-sky-600 text-xl' />
                                     <p>{post && (post.content.length / 4000).toFixed(0)} mins lecture</p>
                                 </div>
                                 <div className='flex gap-2 flex-wrap'>
-                                    <MdOutlineDateRange className='text-orange-400 text-xl' />
+                                    <MdOutlineDateRange className='text-sky-600 text-xl' />
                                     <p>{post && new Date(post.createdAt).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
                                 </div>
                             </div>

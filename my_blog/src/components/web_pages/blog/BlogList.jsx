@@ -97,9 +97,9 @@ export default function BlogList() {
                     {!loading && posts.length === 0 && <p className='text-xl text-gray-500'>Aucun article trouvé.</p>}
                     {!loading && posts.map(post => (
                         <Link to={`/post/${post.slug}`} key={post.slug} className='bg-gray-100 dark:bg-gray-800 lg:grid xl:grid-cols-2 gap-4 mx-4 rounded-xl overflow-hidden'>
-                            <div className='relative w-full h-[17rem] sm:h-[20rem] md:h-[25rem] xl:h-[20rem]'>
-                                <img className='w-full h-full object-cover' src={post.image} alt={post.title} />
-                                <div className='absolute text-white flex flex-col justify-center items-center bottom-0 left-0 bg-orange-400 px-6 py-2'>
+                            <div className='relative w-full sh-[17rem] ssm:h-[20rem] smd:h-[25rem] sxl:h-[20rem]'>
+                                <img className='w-full h-full object-contain' src={post.image} alt={post.title} />
+                                <div className='absolute text-white flex flex-col justify-center items-center bottom-0 left-0 bg-sky-600 px-6 py-2'>
                                     <h3 className='text-4xl'>{new Date(post.createdAt).getDate()}</h3>
                                     <p>{new Date(post.createdAt).toLocaleString('fr-FR', { month: 'long' })}</p>
                                 </div>
@@ -110,16 +110,16 @@ export default function BlogList() {
                                 </div>
                                 <div className='flex gap-6 text-gray-500 flex-wrap py-2 border-b dark:border-b-gray-500 text-sm border-b-gray-300'>
                                     <div className='flex flex-wrap gap-2'>
-                                        <MdOutlineDateRange className='text-orange-400 text-xl' />
+                                        <MdOutlineDateRange className='text-sky-600 text-xl' />
                                         <p className='dark:text-gray-300'>{new Date(post.createdAt).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
                                     </div>
                                     <div className='flex flex-wrap gap-2'>
-                                        <FaReadme className='text-orange-400 text-xl' />
+                                        <FaReadme className='text-sky-600 text-xl' />
                                         <p className='dark:text-gray-300'>{(post.content.length / 4000).toFixed(0)} mins de lecture</p>
                                     </div>
                                 </div>
                                 <div className='text-sm mt-3  line-clamp-4 leading-6 text-gray-600 dark:text-gray-300'>
-                                    <p className='text-orange-400'>{post.category}</p>
+                                    <p className='text-sky-600'>{post.category}</p>
                                     <style>
                                         {`
                                                 .post_content a {
@@ -135,7 +135,7 @@ export default function BlogList() {
                                     </p>
                                 </div>
                                 <div className='flex flex-col xs:flex-row gap-4 py-4 pr-6 justify-between'>
-                                    <button className='w-32 h-8 text-white font-semibold bg-orange-400 hover:bg-orange-500 transition-all'>
+                                    <button className='w-32 h-8 text-white font-semibold bg-sky-600 hover:bg-sky-500 transition-all'>
                                         Lire la suite
                                     </button>
                                 </div>
